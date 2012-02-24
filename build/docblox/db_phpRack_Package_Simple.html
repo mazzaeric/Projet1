@@ -1,0 +1,773 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>DocBlox Documentation</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/jquery-ui.css" type="text/css"></link><link rel="stylesheet" href="css/docblox/jquery-ui-1.8.16.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.tools.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+            $(document).ready(function() {
+                $(".filetree").treeview({
+                    collapsed: true,
+                    persist: "cookie"
+                });
+
+                $("#accordion").accordion({
+                    collapsible: true,
+                    autoHeight:  false,
+                    fillSpace:   true
+                });
+
+                $(".tabs").tabs();
+            });
+        </script></head><body><div xmlns="" id="content">
+<script xmlns:dbx="http://docblox-project.org/xsl/functions">
+
+      function filterElements()
+      {
+        inherited = !$('#show-inherited').hasClass('deselected');
+        public    = !$('#show-public').hasClass('deselected');
+        protected = !$('#show-protected').hasClass('deselected');
+        private   = !$('#show-private').hasClass('deselected');
+
+        $('div.public').each(function(index, val) {
+            $(val).toggle(public && !($(val).hasClass('inherited_from') && !inherited));
+        });
+        $('div.protected').each(function(index, val) {
+            $(val).toggle(protected && !($(val).hasClass('inherited_from') && !inherited));
+        });
+        $('div.private').each(function(index, val) {
+            $(val).toggle(private && !($(val).hasClass('inherited_from') && !inherited));
+        });
+      }
+
+      $(document).ready(function() {
+        $('a.gripper').click(function() {
+            $(this).nextAll('div.code-tabs').slideToggle();
+            $(this).children('img').toggle();
+            return false;
+        });
+
+        $('div.method code span.highlight,div.function code span.highlight,div.constant code span.highlight,div.property code span.highlight').css('cursor', 'pointer');
+
+        $('div.method code span.highlight,div.function code span.highlight,div.constant code span.highlight,div.property code span.highlight').click(function() {
+            $(this).parent().nextAll('div.code-tabs').slideToggle();
+            $(this).parent().prevAll('a.gripper').children('img').toggle();
+            return false;
+        });
+
+        $('div.code-tabs').hide();
+        $('a.gripper').show();
+        $('div.code-tabs:empty').prevAll('a.gripper').html('');
+
+        $('#show-public, #show-protected, #show-private, #show-inherited')
+            .css('cursor', 'pointer')
+            .click(function(){
+                $(this).toggleClass('deselected');
+                if ($(this).hasClass('deselected')) {
+                  $(this).fadeTo('fast', '0.4');
+                } else {
+                  $(this).fadeTo('fast', '1.0');
+                }
+                filterElements();
+                return false;
+            });
+        $('#show-protected, #show-private').click();
+
+        // add the sliding behaviour to the file navigation and show it
+        // it is initially hidden for non-JS users.
+        $("#file-nav-box").show().hover(function() {
+            $("#file-nav-container").slideDown(400);
+        }, function() {
+            $("#file-nav-container").slideUp(400);
+        });
+      });
+
+      
+    </script><h1 xmlns:dbx="http://docblox-project.org/xsl/functions" class="file">phpRack/Package/Simple.php</h1>
+<div xmlns:dbx="http://docblox-project.org/xsl/functions" id="file-nav-box">
+<div id="file-nav-options">
+              Show:
+              <img src="images/icons/visibility_public.png" id="show-public"><img src="images/icons/visibility_protected.png" id="show-protected"><img src="images/icons/visibility_private.png" id="show-private"><span class="attribute" id="show-inherited">inherited</span>
+</div>
+<div id="file-nav-container">
+<ul id="file-nav"><li>
+<a href="#classes"><img src="images/icons/class.png" height="14">
+                          Classes
+                      </a><ul><li><a href="#%5CphpRack_Package_Simple">\phpRack_Package_Simple</a></li></ul>
+</li></ul>
+<div style="clear: left;"></div>
+</div>
+<div id="file-nav-tab">
+              Table of Contents
+          </div>
+</div>
+<a xmlns:dbx="http://docblox-project.org/xsl/functions" name="top" class="anchor"></a><a name="classes" class="anchor"></a><a xmlns:dbx="http://docblox-project.org/xsl/functions" id="\phpRack_Package_Simple" class="anchor"></a><h2 xmlns:dbx="http://docblox-project.org/xsl/functions" class="class">\phpRack_Package_Simple<div class="to-top"><a href="#top">jump to top</a></div>
+</h2>
+<div xmlns:dbx="http://docblox-project.org/xsl/functions" class="class">
+<small class="package"><b>Package: </b>Tests</small><p class="short-description">Simple package, for simple assertions</p>
+<div class="long-description"><p>The package is used from your custom integration test, through the instance
+of {@link phpRack_Assertion} class, which is available like this:</p>
+
+<pre><code>class MyTest extends phpRack_Test {
+  public function testPhpVersion() {
+    $this->assert->php->version->atLeast('5.2');
+  }
+}
+</code></pre>
+
+<p>In this example package {@link phpRack_Package_Php_Version} will be instantiated
+and returned. Later, method atLeast() will be called in this package.</p></div>
+<dl class="class-info">
+<dt>Parent(s)</dt>
+<dd><a href="db_phpRack_Package.html#%5CphpRack_Package">\phpRack_Package</a></dd>
+</dl>
+<h3>Properties</h3>
+<div>
+<a id="\phpRack_Package_Simple::$_latestCallSuccess" class="anchor"></a><div class="property protected inherited_from ">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/property.png" alt="Property"><img src="images/icons/visibility_protected.png" style="margin-right: 5px" alt="protected">boolean
+                 <span class="highlight">$_latestCallSuccess</span>= 'false'
+                </code><div class="description">
+<span class="attribute">inherited</span><p class="short-description">Result of the latest call</p>TRUE means that the latest call was successful<small>Inherited from:
+                        <a href="db_phpRack_Package.html#%5CphpRack_Package::%24%24_latestCallSuccess">\phpRack_Package::$$_latestCallSuccess</a></small>
+</div>
+<div class="code-tabs">
+<div class="long-description"></div>
+<strong>Default value</strong><code>false</code><strong>Details</strong><dl class="property-info">
+<dt>Type</dt>
+<dd>boolean</dd>
+<dt>Inherited_from</dt>
+<dd>
+<a href="db_phpRack_Package.html#%5CphpRack_Package::%24%24_latestCallSuccess">\phpRack_Package::$$_latestCallSuccess</a>
+         
+    </dd>
+<dt>See</dt>
+<dd>\_failure()
+         
+    </dd>
+<dt>See</dt>
+<dd>\_success()
+         
+    </dd>
+</dl>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\phpRack_Package_Simple::$_result" class="anchor"></a><div class="property protected inherited_from ">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/property.png" alt="Property"><img src="images/icons/visibility_protected.png" style="margin-right: 5px" alt="protected">\phpRack_Result
+                 <span class="highlight">$_result</span>= ''
+                </code><div class="description">
+<span class="attribute">inherited</span><p class="short-description">Result collector</p><small>Inherited from:
+                        <a href="db_phpRack_Package.html#%5CphpRack_Package::%24%24_result">\phpRack_Package::$$_result</a></small>
+</div>
+<div class="code-tabs">
+<div class="long-description"></div>
+<strong>Details</strong><dl class="property-info">
+<dt>Type</dt>
+<dd><a href="db_phpRack_Result.html#%5CphpRack_Result">\phpRack_Result</a></dd>
+<dt>Inherited_from</dt>
+<dd>
+<a href="db_phpRack_Package.html#%5CphpRack_Package::%24%24_result">\phpRack_Package::$$_result</a>
+         
+    </dd>
+<dt>See</dt>
+<dd>\__construct()
+         
+    </dd>
+<dt>See</dt>
+<dd>\__get()
+         
+    </dd>
+</dl>
+</div>
+<div class="clear"></div>
+</div>
+</div>
+<h3>Methods</h3>
+<div>
+<a id="\phpRack_Package_Simple::__call()" class="anchor"></a><div class="method public inherited_from ">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">__call</span><span class="nb-faded-text">(
+          string $name, array $args
+          )
+        </span>
+        :
+          void</code><div class="description">
+<span class="attribute">final</span><span class="attribute">inherited</span><p class="short_description">Call to unknown function</p>
+<small>Inherited from:
+                    <a href="db_phpRack_Package.html#%5CphpRack_Package::__call()">\phpRack_Package::__call()</a></small>
+</div>
+<div class="code-tabs">
+<div class="long-description"></div>
+<strong>Parameters</strong><table class="argument-info">
+<thead><tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<th>$name</th>
+<td>string</td>
+<td><em><p>Name of the method</p></em></td>
+</tr>
+<tr>
+<th>$args</th>
+<td>array</td>
+<td><em><p>List of arguments</p></em></td>
+</tr>
+</table>
+<strong>Throws</strong><table class="argument-info">
+<thead><tr>
+<th>Exception</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<td><a href="http://php.net/manual/en/class.exception.php">\Exception</a></td>
+<td><em></em></td>
+</tr>
+</table>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\phpRack_Package_Simple::__construct()" class="anchor"></a><div class="method protected inherited_from ">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_protected.png" style="margin-right: 5px" alt="protected"><span class="highlight">__construct</span><span class="nb-faded-text">(
+          <a href="db_phpRack_Result.html#%5CphpRack_Result">\phpRack_Result</a> $result
+          )
+        </span>
+        :
+          void</code><div class="description">
+<span class="attribute">inherited</span><p class="short_description">Construct the class</p>
+<small>Inherited from:
+                    <a href="db_phpRack_Package.html#%5CphpRack_Package::__construct()">\phpRack_Package::__construct()</a></small>
+</div>
+<div class="code-tabs">
+<div class="long-description"><p>The method is PROTECTED in order to avoid direct instantiation of
+packages outside our factory method {@link factory()}. Some packages
+may override the method, that's why it is protected, not private. For
+example {@link phpRack_Package_Db_Mysql}.</p>
+
+<p>phpRack_Result passed here as parameter is used as a holder of test
+results. This package will ADD new results to this holder, instead of
+creating new one. This holder is passed from {@link phpRack_Test}, normally.</p></div>
+<strong>Parameters</strong><table class="argument-info">
+<thead><tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<th>$result</th>
+<td><a href="db_phpRack_Result.html#%5CphpRack_Result">\phpRack_Result</a></td>
+<td><em><p>Result to use</p></em></td>
+</tr>
+</table>
+<strong>Details</strong><dl class="function-info">
+<dt>See</dt>
+<dd>\factory()
+         
+    </dd>
+</dl>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\phpRack_Package_Simple::__get()" class="anchor"></a><div class="method public inherited_from ">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">__get</span><span class="nb-faded-text">(
+          string $name
+          )
+        </span>
+        :
+          <a href="db_phpRack_Package.html#%5CphpRack_Package">\phpRack_Package</a></code><div class="description">
+<span class="attribute">inherited</span><p class="short_description">Dispatcher of calls to packages</p>
+<small>Inherited from:
+                    <a href="db_phpRack_Package.html#%5CphpRack_Package::__get()">\phpRack_Package::__get()</a></small>
+</div>
+<div class="code-tabs">
+<div class="long-description"><p>Here we create a sub-package, for example:</p>
+
+<pre><code>// inside your instance of phpRack_Test:
+$this->assert->php->extensions->isLoaded('simplexml');
+</code></pre>
+
+<p>The call in the example will lead you to this method, and will call
+__get('extensions'). In return we will create an instance of
+phpRack_Package_Php_Extensions and return it.</p></div>
+<strong>Parameters</strong><table class="argument-info">
+<thead><tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<th>$name</th>
+<td>string</td>
+<td><em><p>Name of the property to get</p></em></td>
+</tr>
+</table>
+<strong>Returns</strong><table class="argument-info">
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<td><a href="db_phpRack_Package.html#%5CphpRack_Package">\phpRack_Package</a></td>
+<td></td>
+</tr>
+</table>
+<strong>Details</strong><dl class="function-info">
+<dt>See</dt>
+<dd>\PhpConfigurationTest::testPhpExtensionsExist
+         
+    </dd>
+</dl>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\phpRack_Package_Simple::_failure()" class="anchor"></a><div class="method protected inherited_from ">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_protected.png" style="margin-right: 5px" alt="protected"><span class="highlight">_failure</span><span class="nb-faded-text">(
+          string $log
+          )
+        </span>
+        :
+          void</code><div class="description">
+<span class="attribute">inherited</span><p class="short_description">Call failed</p>
+<small>Inherited from:
+                    <a href="db_phpRack_Package.html#%5CphpRack_Package::_failure()">\phpRack_Package::_failure()</a></small>
+</div>
+<div class="code-tabs">
+<div class="long-description"></div>
+<strong>Parameters</strong><table class="argument-info">
+<thead><tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<th>$log</th>
+<td>string</td>
+<td><em><p>String to log</p></em></td>
+</tr>
+</table>
+<strong>Details</strong><dl class="function-info">
+<dt>See</dt>
+<dd>
+<a href="db_phpRack_Package_Php.html#%5CphpRack_Package_Php::lint()">\phpRack_Package_Php::lint()</a>
+         
+    </dd>
+</dl>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\phpRack_Package_Simple::_getName()" class="anchor"></a><div class="method protected inherited_from ">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_protected.png" style="margin-right: 5px" alt="protected"><span class="highlight">_getName</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+          string</code><div class="description">
+<span class="attribute">inherited</span><p class="short_description">Get my name, like: "php/version"</p>
+<small>Inherited from:
+                    <a href="db_phpRack_Package.html#%5CphpRack_Package::_getName()">\phpRack_Package::_getName()</a></small>
+</div>
+<div class="code-tabs">
+<div class="long-description"></div>
+<strong>Returns</strong><table class="argument-info">
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<td>string</td>
+<td></td>
+</tr>
+</table>
+<strong>Details</strong><dl class="function-info">
+<dt>See</dt>
+<dd>\__get()
+         
+    </dd>
+</dl>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\phpRack_Package_Simple::_log()" class="anchor"></a><div class="method protected inherited_from ">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_protected.png" style="margin-right: 5px" alt="protected"><span class="highlight">_log</span><span class="nb-faded-text">(
+          string $log
+          )
+        </span>
+        :
+          void</code><div class="description">
+<span class="attribute">inherited</span><p class="short_description">Just log a line</p>
+<small>Inherited from:
+                    <a href="db_phpRack_Package.html#%5CphpRack_Package::_log()">\phpRack_Package::_log()</a></small>
+</div>
+<div class="code-tabs">
+<div class="long-description"></div>
+<strong>Parameters</strong><table class="argument-info">
+<thead><tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<th>$log</th>
+<td>string</td>
+<td><em><p>String to log</p></em></td>
+</tr>
+</table>
+<strong>Details</strong><dl class="function-info">
+<dt>See</dt>
+<dd>
+<a href="db_phpRack_Package_Php.html#%5CphpRack_Package_Php::lint()">\phpRack_Package_Php::lint()</a>
+         
+    </dd>
+</dl>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\phpRack_Package_Simple::_success()" class="anchor"></a><div class="method protected inherited_from ">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_protected.png" style="margin-right: 5px" alt="protected"><span class="highlight">_success</span><span class="nb-faded-text">(
+          string $log
+          )
+        </span>
+        :
+          void</code><div class="description">
+<span class="attribute">inherited</span><p class="short_description">Call was successful</p>
+<small>Inherited from:
+                    <a href="db_phpRack_Package.html#%5CphpRack_Package::_success()">\phpRack_Package::_success()</a></small>
+</div>
+<div class="code-tabs">
+<div class="long-description"></div>
+<strong>Parameters</strong><table class="argument-info">
+<thead><tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<th>$log</th>
+<td>string</td>
+<td><em><p>String to log</p></em></td>
+</tr>
+</table>
+<strong>Details</strong><dl class="function-info">
+<dt>See</dt>
+<dd>
+<a href="db_phpRack_Package_Php.html#%5CphpRack_Package_Php::lint()">\phpRack_Package_Php::lint()</a>
+         
+    </dd>
+</dl>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\phpRack_Package_Simple::factory()" class="anchor"></a><div class="method public inherited_from ">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">factory</span><span class="nb-faded-text">(
+          string $name, <a href="db_phpRack_Result.html#%5CphpRack_Result">\phpRack_Result</a> $result
+          )
+        </span>
+        :
+          <a href="db_phpRack_Package.html#%5CphpRack_Package">\phpRack_Package</a></code><div class="description">
+<span class="attribute">static</span><span class="attribute">inherited</span><p class="short_description">Create new package</p>
+<small>Inherited from:
+                    <a href="db_phpRack_Package.html#%5CphpRack_Package::factory()">\phpRack_Package::factory()</a></small>
+</div>
+<div class="code-tabs">
+<div class="long-description"><p>The method is called factory, but this is not really a static factory. This method
+just simplifies the instantiation of phpRack_Package and encapsulates private
+constructor. Some time ago we had a static factory here, but then removed it. The
+organization of methods stay like before (factory + private constructor). Maybe in
+the future we might decide to introduce static factory again.</p></div>
+<strong>Parameters</strong><table class="argument-info">
+<thead><tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<th>$name</th>
+<td>string</td>
+<td><em><p>Name of the package, like "php/version"</p>
+</em></td>
+</tr>
+<tr>
+<th>$result</th>
+<td><a href="db_phpRack_Result.html#%5CphpRack_Result">\phpRack_Result</a></td>
+<td><em><p>Collector of log lines</p></em></td>
+</tr>
+</table>
+<strong>Returns</strong><table class="argument-info">
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<td><a href="db_phpRack_Package.html#%5CphpRack_Package">\phpRack_Package</a></td>
+<td></td>
+</tr>
+</table>
+<strong>Throws</strong><table class="argument-info">
+<thead><tr>
+<th>Exception</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<td><a href="http://php.net/manual/en/class.exception.php">\Exception</a></td>
+<td><em></em></td>
+</tr>
+</table>
+<strong>Details</strong><dl class="function-info">
+<dt>See</dt>
+<dd>
+<a href="db_phpRack_Assertion.html#%5CphpRack_Assertion::__call()">\phpRack_Assertion::__call()</a>
+         
+    </dd>
+</dl>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\phpRack_Package_Simple::fail()" class="anchor"></a><div class="method public">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">fail</span><span class="nb-faded-text">(
+          string $msg
+          )
+        </span>
+        :
+          <a href="db_phpRack_Package_Simple.html#%5CphpRack_Package_Simple">\phpRack_Package_Simple</a></code><div class="description"><p class="short_description">Just fail the test</p></div>
+<div class="code-tabs">
+<div class="long-description"></div>
+<strong>Parameters</strong><table class="argument-info">
+<thead><tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<th>$msg</th>
+<td>string</td>
+<td><em><p>Message to show</p></em></td>
+</tr>
+</table>
+<strong>Returns</strong><table class="argument-info">
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<td><a href="db_phpRack_Package_Simple.html#%5CphpRack_Package_Simple">\phpRack_Package_Simple</a></td>
+<td></td>
+</tr>
+</table>
+<strong>Details</strong><dl class="function-info">
+<dt>Fluent</dt>
+<dd>This method is part of a fluent interface and will return the same instance
+         
+    </dd>
+</dl>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\phpRack_Package_Simple::isFalse()" class="anchor"></a><div class="method public">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">isFalse</span><span class="nb-faded-text">(
+          mixed $var
+          )
+        </span>
+        :
+          <a href="db_phpRack_Package_Simple.html#%5CphpRack_Package_Simple">\phpRack_Package_Simple</a></code><div class="description"><p class="short_description">Is it false?</p></div>
+<div class="code-tabs">
+<div class="long-description"></div>
+<strong>Parameters</strong><table class="argument-info">
+<thead><tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<th>$var</th>
+<td>mixed</td>
+<td><em><p>Variable to check</p></em></td>
+</tr>
+</table>
+<strong>Returns</strong><table class="argument-info">
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<td><a href="db_phpRack_Package_Simple.html#%5CphpRack_Package_Simple">\phpRack_Package_Simple</a></td>
+<td></td>
+</tr>
+</table>
+<strong>Details</strong><dl class="function-info">
+<dt>Fluent</dt>
+<dd>This method is part of a fluent interface and will return the same instance
+         
+    </dd>
+</dl>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\phpRack_Package_Simple::isTrue()" class="anchor"></a><div class="method public">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">isTrue</span><span class="nb-faded-text">(
+          mixed $var
+          )
+        </span>
+        :
+          <a href="db_phpRack_Package_Simple.html#%5CphpRack_Package_Simple">\phpRack_Package_Simple</a></code><div class="description"><p class="short_description">Is it true?</p></div>
+<div class="code-tabs">
+<div class="long-description"></div>
+<strong>Parameters</strong><table class="argument-info">
+<thead><tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<th>$var</th>
+<td>mixed</td>
+<td><em><p>Variable to check</p></em></td>
+</tr>
+</table>
+<strong>Returns</strong><table class="argument-info">
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<td><a href="db_phpRack_Package_Simple.html#%5CphpRack_Package_Simple">\phpRack_Package_Simple</a></td>
+<td></td>
+</tr>
+</table>
+<strong>Details</strong><dl class="function-info">
+<dt>Fluent</dt>
+<dd>This method is part of a fluent interface and will return the same instance
+         
+    </dd>
+</dl>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\phpRack_Package_Simple::onFailure()" class="anchor"></a><div class="method public inherited_from ">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">onFailure</span><span class="nb-faded-text">(
+          mixed $action
+          )
+        </span>
+        :
+          <a href="db_phpRack_Package_Simple.html#%5CphpRack_Package_Simple">\phpRack_Package_Simple</a></code><div class="description">
+<span class="attribute">final</span><span class="attribute">inherited</span><p class="short_description">What to do on failure?</p>
+<small>Inherited from:
+                    <a href="db_phpRack_Package.html#%5CphpRack_Package::onFailure()">\phpRack_Package::onFailure()</a></small>
+</div>
+<div class="code-tabs">
+<div class="long-description"></div>
+<strong>Parameters</strong><table class="argument-info">
+<thead><tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<th>$action</th>
+<td>mixed</td>
+<td><em><p>What to do? STRING will log this string</p>
+</em></td>
+</tr>
+</table>
+<strong>Returns</strong><table class="argument-info">
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<td><a href="db_phpRack_Package_Simple.html#%5CphpRack_Package_Simple">\phpRack_Package_Simple</a></td>
+<td></td>
+</tr>
+</table>
+<strong>Details</strong><dl class="function-info">
+<dt>Fluent</dt>
+<dd>This method is part of a fluent interface and will return the same instance
+         
+    </dd>
+</dl>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\phpRack_Package_Simple::onSuccess()" class="anchor"></a><div class="method public inherited_from ">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">onSuccess</span><span class="nb-faded-text">(
+          mixed $action
+          )
+        </span>
+        :
+          <a href="db_phpRack_Package_Simple.html#%5CphpRack_Package_Simple">\phpRack_Package_Simple</a></code><div class="description">
+<span class="attribute">final</span><span class="attribute">inherited</span><p class="short_description">What to do on success?</p>
+<small>Inherited from:
+                    <a href="db_phpRack_Package.html#%5CphpRack_Package::onSuccess()">\phpRack_Package::onSuccess()</a></small>
+</div>
+<div class="code-tabs">
+<div class="long-description"></div>
+<strong>Parameters</strong><table class="argument-info">
+<thead><tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<th>$action</th>
+<td>mixed</td>
+<td><em><p>What to do? STRING will log this string</p>
+</em></td>
+</tr>
+</table>
+<strong>Returns</strong><table class="argument-info">
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<td><a href="db_phpRack_Package_Simple.html#%5CphpRack_Package_Simple">\phpRack_Package_Simple</a></td>
+<td></td>
+</tr>
+</table>
+<strong>Details</strong><dl class="function-info">
+<dt>Fluent</dt>
+<dd>This method is part of a fluent interface and will return the same instance
+         
+    </dd>
+</dl>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\phpRack_Package_Simple::success()" class="anchor"></a><div class="method public">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">success</span><span class="nb-faded-text">(
+          string $msg
+          )
+        </span>
+        :
+          <a href="db_phpRack_Package_Simple.html#%5CphpRack_Package_Simple">\phpRack_Package_Simple</a></code><div class="description"><p class="short_description">Mark the test as successful</p></div>
+<div class="code-tabs">
+<div class="long-description"></div>
+<strong>Parameters</strong><table class="argument-info">
+<thead><tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<th>$msg</th>
+<td>string</td>
+<td><em><p>Message to show</p></em></td>
+</tr>
+</table>
+<strong>Returns</strong><table class="argument-info">
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<td><a href="db_phpRack_Package_Simple.html#%5CphpRack_Package_Simple">\phpRack_Package_Simple</a></td>
+<td></td>
+</tr>
+</table>
+<strong>Details</strong><dl class="function-info">
+<dt>Fluent</dt>
+<dd>This method is part of a fluent interface and will return the same instance
+         
+    </dd>
+</dl>
+</div>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+</div>
+<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.18.1</a>.
+    </small></body></html>

@@ -1,0 +1,623 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pmd version="1.3.1" timestamp="2012-02-24T15:16:12+01:00">
+  <file name="/home/www/www1/library/Zend/Acl.php">
+    <violation beginline="59" endline="1241" rule="ExcessiveClassLength" ruleset="Code Size Rules" package="Zend_Acl" externalInfoUrl="http://phpmd.org/rules/codesize.html#excessiveclasslength" class="Zend_Acl" priority="3">
+      The class Zend_Acl has 1183 lines of code. Current threshold is 1000. Avoid really long classes.
+    </violation>
+    <violation beginline="59" endline="1241" rule="TooManyMethods" ruleset="Code Size Rules" package="Zend_Acl" externalInfoUrl="http://phpmd.org/rules/codesize.html#toomanymethods" class="Zend_Acl" priority="3">
+      The class Zend_Acl has 23 methods. Consider refactoring Zend_Acl to keep number of methods under 10.
+    </violation>
+    <violation beginline="59" endline="1241" rule="ExcessiveClassComplexity" ruleset="Code Size Rules" package="Zend_Acl" externalInfoUrl="http://phpmd.org/rules/codesize.html#excessiveclasscomplexity" class="Zend_Acl" priority="3">
+      The class Zend_Acl has an overall complexity of 174 which is very high. The configured complexity threshold is 50.
+    </violation>
+    <violation beginline="458" endline="458" rule="UnusedLocalVariable" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedlocalvariable" priority="3">
+      Avoid unused local variables such as '$child'.
+    </violation>
+    <violation beginline="464" endline="464" rule="UnusedLocalVariable" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedlocalvariable" priority="3">
+      Avoid unused local variables such as '$rules'.
+    </violation>
+    <violation beginline="483" endline="483" rule="UnusedLocalVariable" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedlocalvariable" priority="3">
+      Avoid unused local variables such as '$resource'.
+    </violation>
+    <violation beginline="484" endline="484" rule="UnusedLocalVariable" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedlocalvariable" priority="3">
+      Avoid unused local variables such as '$rules'.
+    </violation>
+    <violation beginline="606" endline="797" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="Zend_Acl" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="Zend_Acl" method="setRule" priority="3">
+      The method setRule() has a Cyclomatic Complexity of 50. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="606" endline="797" rule="NPathComplexity" ruleset="Code Size Rules" package="Zend_Acl" externalInfoUrl="http://phpmd.org/rules/codesize.html#npathcomplexity" class="Zend_Acl" method="setRule" priority="3">
+      The method setRule() has an NPath complexity of 65043. The configured NPath complexity threshold is 200.
+    </violation>
+    <violation beginline="606" endline="797" rule="ExcessiveMethodLength" ruleset="Code Size Rules" package="Zend_Acl" externalInfoUrl="http://phpmd.org/rules/codesize.html#excessivemethodlength" class="Zend_Acl" method="setRule" priority="3">
+      The method setRule() has 192 lines of code. Current threshold is set to 100. Avoid really long methods.
+    </violation>
+    <violation beginline="827" endline="897" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="Zend_Acl" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="Zend_Acl" method="isAllowed" priority="3">
+      The method isAllowed() has a Cyclomatic Complexity of 18. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="827" endline="897" rule="NPathComplexity" ruleset="Code Size Rules" package="Zend_Acl" externalInfoUrl="http://phpmd.org/rules/codesize.html#npathcomplexity" class="Zend_Acl" method="isAllowed" priority="3">
+      The method isAllowed() has an NPath complexity of 288. The configured NPath complexity threshold is 200.
+    </violation>
+    <violation beginline="862" endline="862" rule="UnusedLocalVariable" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedlocalvariable" priority="3">
+      Avoid unused local variables such as '$rule'.
+    </violation>
+    <violation beginline="863" endline="863" rule="UnusedLocalVariable" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedlocalvariable" priority="3">
+      Avoid unused local variables such as '$ruleTypeOnePrivilege'.
+    </violation>
+    <violation beginline="974" endline="974" rule="UnusedLocalVariable" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedlocalvariable" priority="3">
+      Avoid unused local variables such as '$rule'.
+    </violation>
+    <violation beginline="975" endline="975" rule="UnusedLocalVariable" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedlocalvariable" priority="3">
+      Avoid unused local variables such as '$ruleTypeOnePrivilege'.
+    </violation>
+    <violation beginline="985" endline="985" rule="UnusedLocalVariable" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedlocalvariable" priority="3">
+      Avoid unused local variables such as '$roleParentId'.
+    </violation>
+    <violation beginline="1077" endline="1077" rule="UnusedLocalVariable" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedlocalvariable" priority="3">
+      Avoid unused local variables such as '$roleParentId'.
+    </violation>
+    <violation beginline="1105" endline="1146" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="Zend_Acl" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="Zend_Acl" method="_getRuleType" priority="3">
+      The method _getRuleType() has a Cyclomatic Complexity of 14. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="1105" endline="1146" rule="NPathComplexity" ruleset="Code Size Rules" package="Zend_Acl" externalInfoUrl="http://phpmd.org/rules/codesize.html#npathcomplexity" class="Zend_Acl" method="_getRuleType" priority="3">
+      The method _getRuleType() has an NPath complexity of 1456. The configured NPath complexity threshold is 200.
+    </violation>
+    <violation beginline="1161" endline="1204" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="Zend_Acl" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="Zend_Acl" method="_getRules" priority="3">
+      The method _getRules() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="/home/www/www1/library/Zend/Acl/Role/Registry.php">
+    <violation beginline="212" endline="212" rule="UnusedLocalVariable" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedlocalvariable" priority="3">
+      Avoid unused local variables such as '$parent'.
+    </violation>
+    <violation beginline="242" endline="242" rule="UnusedLocalVariable" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedlocalvariable" priority="3">
+      Avoid unused local variables such as '$child'.
+    </violation>
+    <violation beginline="245" endline="245" rule="UnusedLocalVariable" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedlocalvariable" priority="3">
+      Avoid unused local variables such as '$parent'.
+    </violation>
+  </file>
+  <file name="/home/www/www1/library/Zend/Amf/Adobe/Introspector.php">
+    <violation beginline="121" endline="121" rule="UnusedFormalParameter" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedformalparameter" priority="3">
+      Avoid unused parameters such as '$acl'.
+    </violation>
+    <violation beginline="164" endline="203" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="Zend_Amf\Adobe" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="Zend_Amf_Adobe_Introspector" method="_addService" priority="3">
+      The method _addService() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="314" endline="314" rule="UnusedFormalParameter" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedformalparameter" priority="3">
+      Avoid unused parameters such as '$msg'.
+    </violation>
+  </file>
+  <file name="/home/www/www1/library/Zend/Amf/Parse/Amf0/Deserializer.php">
+    <violation beginline="65" endline="136" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="Zend_Amf\Parse_Amf0" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="Zend_Amf_Parse_Amf0_Deserializer" method="readTypeMarker" priority="3">
+      The method readTypeMarker() has a Cyclomatic Complexity of 17. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="201" endline="201" rule="UnusedLocalVariable" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedlocalvariable" priority="3">
+      Avoid unused local variables such as '$length'.
+    </violation>
+    <violation beginline="235" endline="235" rule="UnusedLocalVariable" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedlocalvariable" priority="3">
+      Avoid unused local variables such as '$offset'.
+    </violation>
+  </file>
+  <file name="/home/www/www1/library/Zend/Amf/Parse/Amf0/Serializer.php">
+    <violation beginline="38" endline="362" rule="ExcessiveClassComplexity" ruleset="Code Size Rules" package="Zend_Amf\Parse_Amf0" externalInfoUrl="http://phpmd.org/rules/codesize.html#excessiveclasscomplexity" class="Zend_Amf_Parse_Amf0_Serializer" priority="3">
+      The class Zend_Amf_Parse_Amf0_Serializer has an overall complexity of 61 which is very high. The configured complexity threshold is 50.
+    </violation>
+    <violation beginline="64" endline="184" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="Zend_Amf\Parse_Amf0" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="Zend_Amf_Parse_Amf0_Serializer" method="writeTypeMarker" priority="3">
+      The method writeTypeMarker() has a Cyclomatic Complexity of 35. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="64" endline="184" rule="ExcessiveMethodLength" ruleset="Code Size Rules" package="Zend_Amf\Parse_Amf0" externalInfoUrl="http://phpmd.org/rules/codesize.html#excessivemethodlength" class="Zend_Amf_Parse_Amf0_Serializer" method="writeTypeMarker" priority="3">
+      The method writeTypeMarker() has 121 lines of code. Current threshold is set to 100. Avoid really long methods.
+    </violation>
+  </file>
+  <file name="/home/www/www1/library/Zend/Amf/Parse/Amf3/Deserializer.php">
+    <violation beginline="40" endline="422" rule="ExcessiveClassComplexity" ruleset="Code Size Rules" package="Zend_Amf\Parse_Amf3" externalInfoUrl="http://phpmd.org/rules/codesize.html#excessiveclasscomplexity" class="Zend_Amf_Parse_Amf3_Deserializer" priority="3">
+      The class Zend_Amf_Parse_Amf3_Deserializer has an overall complexity of 54 which is very high. The configured complexity threshold is 50.
+    </violation>
+    <violation beginline="77" endline="113" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="Zend_Amf\Parse_Amf3" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="Zend_Amf_Parse_Amf3_Deserializer" method="readTypeMarker" priority="3">
+      The method readTypeMarker() has a Cyclomatic Complexity of 15. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="279" endline="407" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="Zend_Amf\Parse_Amf3" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="Zend_Amf_Parse_Amf3_Deserializer" method="readObject" priority="3">
+      The method readObject() has a Cyclomatic Complexity of 21. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="279" endline="407" rule="NPathComplexity" ruleset="Code Size Rules" package="Zend_Amf\Parse_Amf3" externalInfoUrl="http://phpmd.org/rules/codesize.html#npathcomplexity" class="Zend_Amf_Parse_Amf3_Deserializer" method="readObject" priority="3">
+      The method readObject() has an NPath complexity of 2274. The configured NPath complexity threshold is 200.
+    </violation>
+    <violation beginline="279" endline="407" rule="ExcessiveMethodLength" ruleset="Code Size Rules" package="Zend_Amf\Parse_Amf3" externalInfoUrl="http://phpmd.org/rules/codesize.html#excessivemethodlength" class="Zend_Amf_Parse_Amf3_Deserializer" method="readObject" priority="3">
+      The method readObject() has 129 lines of code. Current threshold is set to 100. Avoid really long methods.
+    </violation>
+  </file>
+  <file name="/home/www/www1/library/Zend/Amf/Parse/Amf3/Serializer.php">
+    <violation beginline="41" endline="534" rule="ExcessiveClassComplexity" ruleset="Code Size Rules" package="Zend_Amf\Parse_Amf3" externalInfoUrl="http://phpmd.org/rules/codesize.html#excessiveclasscomplexity" class="Zend_Amf_Parse_Amf3_Serializer" priority="3">
+      The class Zend_Amf_Parse_Amf3_Serializer has an overall complexity of 84 which is very high. The configured complexity threshold is 50.
+    </violation>
+    <violation beginline="79" endline="175" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="Zend_Amf\Parse_Amf3" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="Zend_Amf_Parse_Amf3_Serializer" method="writeTypeMarker" priority="3">
+      The method writeTypeMarker() has a Cyclomatic Complexity of 31. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="412" endline="533" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="Zend_Amf\Parse_Amf3" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="Zend_Amf_Parse_Amf3_Serializer" method="writeObject" priority="3">
+      The method writeObject() has a Cyclomatic Complexity of 21. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="412" endline="533" rule="NPathComplexity" ruleset="Code Size Rules" package="Zend_Amf\Parse_Amf3" externalInfoUrl="http://phpmd.org/rules/codesize.html#npathcomplexity" class="Zend_Amf_Parse_Amf3_Serializer" method="writeObject" priority="3">
+      The method writeObject() has an NPath complexity of 1950. The configured NPath complexity threshold is 200.
+    </violation>
+    <violation beginline="412" endline="533" rule="ExcessiveMethodLength" ruleset="Code Size Rules" package="Zend_Amf\Parse_Amf3" externalInfoUrl="http://phpmd.org/rules/codesize.html#excessivemethodlength" class="Zend_Amf_Parse_Amf3_Serializer" method="writeObject" priority="3">
+      The method writeObject() has 122 lines of code. Current threshold is set to 100. Avoid really long methods.
+    </violation>
+  </file>
+  <file name="/home/www/www1/library/Zend/Amf/Request.php">
+    <violation beginline="170" endline="170" rule="UnusedLocalVariable" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedlocalvariable" priority="3">
+      Avoid unused local variables such as '$length'.
+    </violation>
+  </file>
+  <file name="/home/www/www1/library/Zend/Amf/Server.php">
+    <violation beginline="58" endline="964" rule="TooManyMethods" ruleset="Code Size Rules" package="Zend_Amf\Server" externalInfoUrl="http://phpmd.org/rules/codesize.html#toomanymethods" class="Zend_Amf_Server" priority="3">
+      The class Zend_Amf_Server has 16 methods. Consider refactoring Zend_Amf_Server to keep number of methods under 10.
+    </violation>
+    <violation beginline="58" endline="964" rule="ExcessiveClassComplexity" ruleset="Code Size Rules" package="Zend_Amf\Server" externalInfoUrl="http://phpmd.org/rules/codesize.html#excessiveclasscomplexity" class="Zend_Amf_Server" priority="3">
+      The class Zend_Amf_Server has an overall complexity of 131 which is very high. The configured complexity threshold is 50.
+    </violation>
+    <violation beginline="240" endline="277" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="Zend_Amf\Server" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="Zend_Amf_Server" method="_checkAcl" priority="3">
+      The method _checkAcl() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="240" endline="277" rule="NPathComplexity" ruleset="Code Size Rules" package="Zend_Amf\Server" externalInfoUrl="http://phpmd.org/rules/codesize.html#npathcomplexity" class="Zend_Amf_Server" method="_checkAcl" priority="3">
+      The method _checkAcl() has an NPath complexity of 372. The configured NPath complexity threshold is 200.
+    </violation>
+    <violation beginline="302" endline="373" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="Zend_Amf\Server" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="Zend_Amf_Server" method="_dispatch" priority="3">
+      The method _dispatch() has a Cyclomatic Complexity of 15. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="302" endline="373" rule="NPathComplexity" ruleset="Code Size Rules" package="Zend_Amf\Server" externalInfoUrl="http://phpmd.org/rules/codesize.html#npathcomplexity" class="Zend_Amf_Server" method="_dispatch" priority="3">
+      The method _dispatch() has an NPath complexity of 2250. The configured NPath complexity threshold is 200.
+    </violation>
+    <violation beginline="492" endline="630" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="Zend_Amf\Server" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="Zend_Amf_Server" method="_handle" priority="3">
+      The method _handle() has a Cyclomatic Complexity of 19. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="492" endline="630" rule="NPathComplexity" ruleset="Code Size Rules" package="Zend_Amf\Server" externalInfoUrl="http://phpmd.org/rules/codesize.html#npathcomplexity" class="Zend_Amf_Server" method="_handle" priority="3">
+      The method _handle() has an NPath complexity of 510. The configured NPath complexity threshold is 200.
+    </violation>
+    <violation beginline="492" endline="630" rule="ExcessiveMethodLength" ruleset="Code Size Rules" package="Zend_Amf\Server" externalInfoUrl="http://phpmd.org/rules/codesize.html#excessivemethodlength" class="Zend_Amf_Server" method="_handle" priority="3">
+      The method _handle() has 139 lines of code. Current threshold is set to 100. Avoid really long methods.
+    </violation>
+    <violation beginline="735" endline="735" rule="UnusedLocalVariable" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedlocalvariable" priority="3">
+      Avoid unused local variables such as '$response'.
+    </violation>
+    <violation beginline="757" endline="784" rule="NPathComplexity" ruleset="Code Size Rules" package="Zend_Amf\Server" externalInfoUrl="http://phpmd.org/rules/codesize.html#npathcomplexity" class="Zend_Amf_Server" method="setClass" priority="3">
+      The method setClass() has an NPath complexity of 300. The configured NPath complexity threshold is 200.
+    </violation>
+    <violation beginline="856" endline="856" rule="UnusedLocalVariable" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedlocalvariable" priority="3">
+      Avoid unused local variables such as '$key'.
+    </violation>
+    <violation beginline="898" endline="898" rule="UnusedFormalParameter" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedformalparameter" priority="3">
+      Avoid unused parameters such as '$fault'.
+    </violation>
+    <violation beginline="898" endline="898" rule="UnusedFormalParameter" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedformalparameter" priority="3">
+      Avoid unused parameters such as '$code'.
+    </violation>
+    <violation beginline="923" endline="923" rule="UnusedFormalParameter" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedformalparameter" priority="3">
+      Avoid unused parameters such as '$mode'.
+    </violation>
+    <violation beginline="935" endline="935" rule="UnusedFormalParameter" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedformalparameter" priority="3">
+      Avoid unused parameters such as '$definition'.
+    </violation>
+  </file>
+  <file name="/home/www/www1/library/Zend/Amf/Util/BinaryStream.php">
+    <violation beginline="31" endline="285" rule="TooManyMethods" ruleset="Code Size Rules" package="Zend_Amf\Util" externalInfoUrl="http://phpmd.org/rules/codesize.html#toomanymethods" class="Zend_Amf_Util_BinaryStream" priority="3">
+      The class Zend_Amf_Util_BinaryStream has 16 methods. Consider refactoring Zend_Amf_Util_BinaryStream to keep number of methods under 10.
+    </violation>
+    <violation beginline="128" endline="128" rule="UnusedLocalVariable" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedlocalvariable" priority="3">
+      Avoid unused local variables such as '$length'.
+    </violation>
+  </file>
+  <file name="/home/www/www1/library/Zend/Application.php">
+    <violation beginline="28" endline="417" rule="ExcessiveClassComplexity" ruleset="Code Size Rules" package="Zend_Application" externalInfoUrl="http://phpmd.org/rules/codesize.html#excessiveclasscomplexity" class="Zend_Application" priority="3">
+      The class Zend_Application has an overall complexity of 59 which is very high. The configured complexity threshold is 50.
+    </violation>
+    <violation beginline="124" endline="191" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="Zend_Application" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="Zend_Application" method="setOptions" priority="3">
+      The method setOptions() has a Cyclomatic Complexity of 15. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="124" endline="191" rule="NPathComplexity" ruleset="Code Size Rules" package="Zend_Application" externalInfoUrl="http://phpmd.org/rules/codesize.html#npathcomplexity" class="Zend_Application" method="setOptions" priority="3">
+      The method setOptions() has an NPath complexity of 1568. The configured NPath complexity threshold is 200.
+    </violation>
+    <violation beginline="376" endline="416" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="Zend_Application" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="Zend_Application" method="_loadConfig" priority="3">
+      The method _loadConfig() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="/home/www/www1/library/Zend/Application/Bootstrap/BootstrapAbstract.php">
+    <violation beginline="34" endline="772" rule="TooManyMethods" ruleset="Code Size Rules" package="Zend_Application\Bootstrap" externalInfoUrl="http://phpmd.org/rules/codesize.html#toomanymethods" class="Zend_Application_Bootstrap_BootstrapAbstract" priority="3">
+      The class Zend_Application_Bootstrap_BootstrapAbstract has 16 methods. Consider refactoring Zend_Application_Bootstrap_BootstrapAbstract to keep number of methods under 10.
+    </violation>
+    <violation beginline="34" endline="772" rule="ExcessiveClassComplexity" ruleset="Code Size Rules" package="Zend_Application\Bootstrap" externalInfoUrl="http://phpmd.org/rules/codesize.html#excessiveclasscomplexity" class="Zend_Application_Bootstrap_BootstrapAbstract" priority="3">
+      The class Zend_Application_Bootstrap_BootstrapAbstract has an overall complexity of 98 which is very high. The configured complexity threshold is 50.
+    </violation>
+    <violation beginline="323" endline="372" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="Zend_Application\Bootstrap" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="Zend_Application_Bootstrap_BootstrapAbstract" method="getPluginResource" priority="3">
+      The method getPluginResource() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="598" endline="598" rule="UnusedFormalParameter" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedformalparameter" priority="3">
+      Avoid unused parameters such as '$args'.
+    </violation>
+    <violation beginline="761" endline="761" rule="UnusedLocalVariable" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedlocalvariable" priority="3">
+      Avoid unused local variables such as '$paths'.
+    </violation>
+  </file>
+  <file name="/home/www/www1/library/Zend/Application/Module/Autoloader.php">
+    <violation beginline="57" endline="57" rule="UnusedLocalVariable" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedlocalvariable" priority="3">
+      Avoid unused local variables such as '$basePath'.
+    </violation>
+  </file>
+  <file name="/home/www/www1/library/Zend/Application/Resource/Frontcontroller.php">
+    <violation beginline="50" endline="149" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="Zend_Application\Resource" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="Zend_Application_Resource_Frontcontroller" method="init" priority="3">
+      The method init() has a Cyclomatic Complexity of 28. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="50" endline="149" rule="ExcessiveMethodLength" ruleset="Code Size Rules" package="Zend_Application\Resource" externalInfoUrl="http://phpmd.org/rules/codesize.html#excessivemethodlength" class="Zend_Application_Resource_Frontcontroller" method="init" priority="3">
+      The method init() has 100 lines of code. Current threshold is set to 100. Avoid really long methods.
+    </violation>
+    <violation beginline="144" endline="144" rule="UnusedLocalVariable" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedlocalvariable" priority="3">
+      Avoid unused local variables such as '$bootstrap'.
+    </violation>
+  </file>
+  <file name="/home/www/www1/library/Zend/Application/Resource/Mail.php">
+    <violation beginline="54" endline="82" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="Zend_Application\Resource" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="Zend_Application_Resource_Mail" method="getMail" priority="3">
+      The method getMail() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="/home/www/www1/library/Zend/Application/Resource/Modules.php">
+    <violation beginline="63" endline="111" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="Zend_Application\Resource" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="Zend_Application_Resource_Modules" method="init" priority="3">
+      The method init() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="/home/www/www1/library/Zend/Application/Resource/Translate.php">
+    <violation beginline="65" endline="133" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="Zend_Application\Resource" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="Zend_Application_Resource_Translate" method="getTranslate" priority="3">
+      The method getTranslate() has a Cyclomatic Complexity of 20. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="65" endline="133" rule="NPathComplexity" ruleset="Code Size Rules" package="Zend_Application\Resource" externalInfoUrl="http://phpmd.org/rules/codesize.html#npathcomplexity" class="Zend_Application_Resource_Translate" method="getTranslate" priority="3">
+      The method getTranslate() has an NPath complexity of 6301. The configured NPath complexity threshold is 200.
+    </violation>
+  </file>
+  <file name="/home/www/www1/library/Zend/Auth/Adapter/DbTable.php">
+    <violation beginline="47" endline="561" rule="ExcessiveClassComplexity" ruleset="Code Size Rules" package="Zend_Auth\Adapter" externalInfoUrl="http://phpmd.org/rules/codesize.html#excessiveclasscomplexity" class="Zend_Auth_Adapter_DbTable" priority="3">
+      The class Zend_Auth_Adapter_DbTable has an overall complexity of 56 which is very high. The configured complexity threshold is 50.
+    </violation>
+  </file>
+  <file name="/home/www/www1/library/Zend/Auth/Adapter/Digest.php">
+    <violation beginline="76" endline="76" rule="UnusedFormalParameter" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedformalparameter" priority="3">
+      Avoid unused parameters such as '$filename'.
+    </violation>
+    <violation beginline="76" endline="76" rule="UnusedFormalParameter" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedformalparameter" priority="3">
+      Avoid unused parameters such as '$realm'.
+    </violation>
+    <violation beginline="76" endline="76" rule="UnusedFormalParameter" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedformalparameter" priority="3">
+      Avoid unused parameters such as '$username'.
+    </violation>
+    <violation beginline="76" endline="76" rule="UnusedFormalParameter" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedformalparameter" priority="3">
+      Avoid unused parameters such as '$password'.
+    </violation>
+  </file>
+  <file name="/home/www/www1/library/Zend/Auth/Adapter/Http.php">
+    <violation beginline="44" endline="869" rule="TooManyMethods" ruleset="Code Size Rules" package="Zend_Auth\Zend_Auth_Adapter_Http" externalInfoUrl="http://phpmd.org/rules/codesize.html#toomanymethods" class="Zend_Auth_Adapter_Http" priority="3">
+      The class Zend_Auth_Adapter_Http has 11 methods. Consider refactoring Zend_Auth_Adapter_Http to keep number of methods under 10.
+    </violation>
+    <violation beginline="44" endline="869" rule="ExcessiveClassComplexity" ruleset="Code Size Rules" package="Zend_Auth\Zend_Auth_Adapter_Http" externalInfoUrl="http://phpmd.org/rules/codesize.html#excessiveclasscomplexity" class="Zend_Auth_Adapter_Http" priority="3">
+      The class Zend_Auth_Adapter_Http has an overall complexity of 111 which is very high. The configured complexity threshold is 50.
+    </violation>
+    <violation beginline="168" endline="264" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="Zend_Auth\Zend_Auth_Adapter_Http" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="Zend_Auth_Adapter_Http" method="__construct" priority="3">
+      The method __construct() has a Cyclomatic Complexity of 20. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="168" endline="264" rule="NPathComplexity" ruleset="Code Size Rules" package="Zend_Auth\Zend_Auth_Adapter_Http" externalInfoUrl="http://phpmd.org/rules/codesize.html#npathcomplexity" class="Zend_Auth_Adapter_Http" method="__construct" priority="3">
+      The method __construct() has an NPath complexity of 13080. The configured NPath complexity threshold is 200.
+    </violation>
+    <violation beginline="556" endline="649" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="Zend_Auth\Zend_Auth_Adapter_Http" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="Zend_Auth_Adapter_Http" method="_digestAuth" priority="3">
+      The method _digestAuth() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="556" endline="649" rule="NPathComplexity" ruleset="Code Size Rules" package="Zend_Auth\Zend_Auth_Adapter_Http" externalInfoUrl="http://phpmd.org/rules/codesize.html#npathcomplexity" class="Zend_Auth_Adapter_Http" method="_digestAuth" priority="3">
+      The method _digestAuth() has an NPath complexity of 2304. The configured NPath complexity threshold is 200.
+    </violation>
+    <violation beginline="697" endline="846" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="Zend_Auth\Zend_Auth_Adapter_Http" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="Zend_Auth_Adapter_Http" method="_parseDigestAuth" priority="3">
+      The method _parseDigestAuth() has a Cyclomatic Complexity of 41. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="697" endline="846" rule="NPathComplexity" ruleset="Code Size Rules" package="Zend_Auth\Zend_Auth_Adapter_Http" externalInfoUrl="http://phpmd.org/rules/codesize.html#npathcomplexity" class="Zend_Auth_Adapter_Http" method="_parseDigestAuth" priority="3">
+      The method _parseDigestAuth() has an NPath complexity of 642453120. The configured NPath complexity threshold is 200.
+    </violation>
+    <violation beginline="697" endline="846" rule="ExcessiveMethodLength" ruleset="Code Size Rules" package="Zend_Auth\Zend_Auth_Adapter_Http" externalInfoUrl="http://phpmd.org/rules/codesize.html#excessivemethodlength" class="Zend_Auth_Adapter_Http" method="_parseDigestAuth" priority="3">
+      The method _parseDigestAuth() has 150 lines of code. Current threshold is set to 100. Avoid really long methods.
+    </violation>
+  </file>
+  <file name="/home/www/www1/library/Zend/Auth/Adapter/Http/Resolver/File.php">
+    <violation beginline="113" endline="166" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="Zend_Auth\Zend_Auth_Adapter_Http" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="Zend_Auth_Adapter_Http_Resolver_File" method="resolve" priority="3">
+      The method resolve() has a Cyclomatic Complexity of 11. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="/home/www/www1/library/Zend/Auth/Adapter/Ldap.php">
+    <violation beginline="35" endline="528" rule="ExcessiveClassComplexity" ruleset="Code Size Rules" package="Zend_Auth\Zend_Auth_Adapter" externalInfoUrl="http://phpmd.org/rules/codesize.html#excessiveclasscomplexity" class="Zend_Auth_Adapter_Ldap" priority="3">
+      The class Zend_Auth_Adapter_Ldap has an overall complexity of 56 which is very high. The configured complexity threshold is 50.
+    </violation>
+    <violation beginline="245" endline="385" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="Zend_Auth\Zend_Auth_Adapter" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="Zend_Auth_Adapter_Ldap" method="authenticate" priority="3">
+      The method authenticate() has a Cyclomatic Complexity of 15. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="245" endline="385" rule="NPathComplexity" ruleset="Code Size Rules" package="Zend_Auth\Zend_Auth_Adapter" externalInfoUrl="http://phpmd.org/rules/codesize.html#npathcomplexity" class="Zend_Auth_Adapter_Ldap" method="authenticate" priority="3">
+      The method authenticate() has an NPath complexity of 1140. The configured NPath complexity threshold is 200.
+    </violation>
+    <violation beginline="245" endline="385" rule="ExcessiveMethodLength" ruleset="Code Size Rules" package="Zend_Auth\Zend_Auth_Adapter" externalInfoUrl="http://phpmd.org/rules/codesize.html#excessivemethodlength" class="Zend_Auth_Adapter_Ldap" method="authenticate" priority="3">
+      The method authenticate() has 141 lines of code. Current threshold is set to 100. Avoid really long methods.
+    </violation>
+    <violation beginline="282" endline="282" rule="UnusedLocalVariable" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedlocalvariable" priority="3">
+      Avoid unused local variables such as '$name'.
+    </violation>
+  </file>
+  <file name="/home/www/www1/library/Zend/Barcode.php">
+    <violation beginline="57" endline="102" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="Zend_Barcode" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="Zend_Barcode" method="factory" priority="3">
+      The method factory() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="57" endline="102" rule="NPathComplexity" ruleset="Code Size Rules" package="Zend_Barcode" externalInfoUrl="http://phpmd.org/rules/codesize.html#npathcomplexity" class="Zend_Barcode" method="factory" priority="3">
+      The method factory() has an NPath complexity of 272. The configured NPath complexity threshold is 200.
+    </violation>
+    <violation beginline="111" endline="201" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="Zend_Barcode" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="Zend_Barcode" method="makeBarcode" priority="3">
+      The method makeBarcode() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="111" endline="201" rule="NPathComplexity" ruleset="Code Size Rules" package="Zend_Barcode" externalInfoUrl="http://phpmd.org/rules/codesize.html#npathcomplexity" class="Zend_Barcode" method="makeBarcode" priority="3">
+      The method makeBarcode() has an NPath complexity of 1344. The configured NPath complexity threshold is 200.
+    </violation>
+    <violation beginline="210" endline="305" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="Zend_Barcode" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="Zend_Barcode" method="makeRenderer" priority="3">
+      The method makeRenderer() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="210" endline="305" rule="NPathComplexity" ruleset="Code Size Rules" package="Zend_Barcode" externalInfoUrl="http://phpmd.org/rules/codesize.html#npathcomplexity" class="Zend_Barcode" method="makeRenderer" priority="3">
+      The method makeRenderer() has an NPath complexity of 960. The configured NPath complexity threshold is 200.
+    </violation>
+  </file>
+  <file name="/home/www/www1/library/Zend/Barcode/Object/Code128.php">
+    <violation beginline="264" endline="336" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="Zend_Barcode" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="Zend_Barcode_Object_Code128" method="_convertToBarcodeChars" priority="3">
+      The method _convertToBarcodeChars() has a Cyclomatic Complexity of 21. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="276" endline="276" rule="UnusedLocalVariable" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedlocalvariable" priority="3">
+      Avoid unused local variables such as '$sum'.
+    </violation>
+    <violation beginline="277" endline="277" rule="UnusedLocalVariable" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedlocalvariable" priority="3">
+      Avoid unused local variables such as '$fak'.
+    </violation>
+  </file>
+  <file name="/home/www/www1/library/Zend/Barcode/Object/ObjectAbstract.php">
+    <violation beginline="31" endline="1317" rule="ExcessiveClassLength" ruleset="Code Size Rules" package="Zend_Barcode" externalInfoUrl="http://phpmd.org/rules/codesize.html#excessiveclasslength" class="Zend_Barcode_Object_ObjectAbstract" priority="3">
+      The class Zend_Barcode_Object_ObjectAbstract has 1287 lines of code. Current threshold is 1000. Avoid really long classes.
+    </violation>
+    <violation beginline="31" endline="1317" rule="ExcessivePublicCount" ruleset="Code Size Rules" package="Zend_Barcode" externalInfoUrl="http://phpmd.org/rules/codesize.html#excessivepubliccount" class="Zend_Barcode_Object_ObjectAbstract" priority="3">
+      The class Zend_Barcode_Object_ObjectAbstract has 51 public methods and attributes. Consider to reduce the number of public items under 45.
+    </violation>
+    <violation beginline="31" endline="1317" rule="TooManyFields" ruleset="Code Size Rules" package="Zend_Barcode" externalInfoUrl="http://phpmd.org/rules/codesize.html#toomanyfields" class="Zend_Barcode_Object_ObjectAbstract" priority="3">
+      The class Zend_Barcode_Object_ObjectAbstract has 29 fields. Consider to redesign Zend_Barcode_Object_ObjectAbstract to keep the number of fields under 15.
+    </violation>
+    <violation beginline="31" endline="1317" rule="TooManyMethods" ruleset="Code Size Rules" package="Zend_Barcode" externalInfoUrl="http://phpmd.org/rules/codesize.html#toomanymethods" class="Zend_Barcode_Object_ObjectAbstract" priority="3">
+      The class Zend_Barcode_Object_ObjectAbstract has 25 methods. Consider refactoring Zend_Barcode_Object_ObjectAbstract to keep number of methods under 10.
+    </violation>
+    <violation beginline="31" endline="1317" rule="ExcessiveClassComplexity" ruleset="Code Size Rules" package="Zend_Barcode" externalInfoUrl="http://phpmd.org/rules/codesize.html#excessiveclasscomplexity" class="Zend_Barcode_Object_ObjectAbstract" priority="3">
+      The class Zend_Barcode_Object_ObjectAbstract has an overall complexity of 140 which is very high. The configured complexity threshold is 50.
+    </violation>
+  </file>
+  <file name="/home/www/www1/library/Zend/Barcode/Renderer/Image.php">
+    <violation beginline="394" endline="469" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="Zend_Barcode" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="Zend_Barcode_Renderer_Image" method="_drawText" priority="3">
+      The method _drawText() has a Cyclomatic Complexity of 11. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="/home/www/www1/library/Zend/Barcode/Renderer/RendererAbstract.php">
+    <violation beginline="31" endline="540" rule="TooManyMethods" ruleset="Code Size Rules" package="Zend_Barcode" externalInfoUrl="http://phpmd.org/rules/codesize.html#toomanymethods" class="Zend_Barcode_Renderer_RendererAbstract" priority="3">
+      The class Zend_Barcode_Renderer_RendererAbstract has 11 methods. Consider refactoring Zend_Barcode_Renderer_RendererAbstract to keep number of methods under 10.
+    </violation>
+    <violation beginline="31" endline="540" rule="ExcessiveClassComplexity" ruleset="Code Size Rules" package="Zend_Barcode" externalInfoUrl="http://phpmd.org/rules/codesize.html#excessiveclasscomplexity" class="Zend_Barcode_Renderer_RendererAbstract" priority="3">
+      The class Zend_Barcode_Renderer_RendererAbstract has an overall complexity of 62 which is very high. The configured complexity threshold is 50.
+    </violation>
+    <violation beginline="386" endline="420" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="Zend_Barcode" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="Zend_Barcode_Renderer_RendererAbstract" method="_adjustPosition" priority="3">
+      The method _adjustPosition() has a Cyclomatic Complexity of 11. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="/home/www/www1/library/Zend/Cache/Backend.php">
+    <violation beginline="152" endline="198" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="Zend_Cache\Zend_Cache_Backend" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="Zend_Cache_Backend" method="getTmpDir" priority="3">
+      The method getTmpDir() has a Cyclomatic Complexity of 15. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="152" endline="198" rule="NPathComplexity" ruleset="Code Size Rules" package="Zend_Cache\Zend_Cache_Backend" externalInfoUrl="http://phpmd.org/rules/codesize.html#npathcomplexity" class="Zend_Cache_Backend" method="getTmpDir" priority="3">
+      The method getTmpDir() has an NPath complexity of 972. The configured NPath complexity threshold is 200.
+    </violation>
+    <violation beginline="154" endline="154" rule="UnusedLocalVariable" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedlocalvariable" priority="3">
+      Avoid unused local variables such as '$tmpdir'.
+    </violation>
+  </file>
+  <file name="/home/www/www1/library/Zend/Cache/Backend/Apc.php">
+    <violation beginline="283" endline="283" rule="UnusedLocalVariable" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedlocalvariable" priority="3">
+      Avoid unused local variables such as '$data'.
+    </violation>
+  </file>
+  <file name="/home/www/www1/library/Zend/Cache/Backend/BlackHole.php">
+    <violation beginline="247" endline="247" rule="UnusedFormalParameter" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedformalparameter" priority="3">
+      Avoid unused parameters such as '$id'.
+    </violation>
+  </file>
+  <file name="/home/www/www1/library/Zend/Cache/Backend/File.php">
+    <violation beginline="40" endline="1007" rule="TooManyMethods" ruleset="Code Size Rules" package="Zend_Cache\Zend_Cache_Backend" externalInfoUrl="http://phpmd.org/rules/codesize.html#toomanymethods" class="Zend_Cache_Backend_File" priority="3">
+      The class Zend_Cache_Backend_File has 29 methods. Consider refactoring Zend_Cache_Backend_File to keep number of methods under 10.
+    </violation>
+    <violation beginline="40" endline="1007" rule="ExcessiveClassComplexity" ruleset="Code Size Rules" package="Zend_Cache\Zend_Cache_Backend" externalInfoUrl="http://phpmd.org/rules/codesize.html#excessiveclasscomplexity" class="Zend_Cache_Backend_File" priority="3">
+      The class Zend_Cache_Backend_File has an overall complexity of 153 which is very high. The configured complexity threshold is 50.
+    </violation>
+    <violation beginline="642" endline="733" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="Zend_Cache\Zend_Cache_Backend" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="Zend_Cache_Backend_File" method="_clean" priority="3">
+      The method _clean() has a Cyclomatic Complexity of 33. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="642" endline="733" rule="NPathComplexity" ruleset="Code Size Rules" package="Zend_Cache\Zend_Cache_Backend" externalInfoUrl="http://phpmd.org/rules/codesize.html#npathcomplexity" class="Zend_Cache_Backend_File" method="_clean" priority="3">
+      The method _clean() has an NPath complexity of 2228. The configured NPath complexity threshold is 200.
+    </violation>
+    <violation beginline="735" endline="817" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="Zend_Cache\Zend_Cache_Backend" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="Zend_Cache_Backend_File" method="_get" priority="3">
+      The method _get() has a Cyclomatic Complexity of 24. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="735" endline="817" rule="NPathComplexity" ruleset="Code Size Rules" package="Zend_Cache\Zend_Cache_Backend" externalInfoUrl="http://phpmd.org/rules/codesize.html#npathcomplexity" class="Zend_Cache_Backend_File" method="_get" priority="3">
+      The method _get() has an NPath complexity of 1364. The configured NPath complexity threshold is 200.
+    </violation>
+  </file>
+  <file name="/home/www/www1/library/Zend/Cache/Backend/Libmemcached.php">
+    <violation beginline="41" endline="484" rule="ExcessiveClassComplexity" ruleset="Code Size Rules" package="Zend_Cache\Zend_Cache_Backend" externalInfoUrl="http://phpmd.org/rules/codesize.html#excessiveclasscomplexity" class="Zend_Cache_Backend_Libmemcached" priority="3">
+      The class Zend_Cache_Backend_Libmemcached has an overall complexity of 50 which is very high. The configured complexity threshold is 50.
+    </violation>
+    <violation beginline="97" endline="155" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="Zend_Cache\Zend_Cache_Backend" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="Zend_Cache_Backend_Libmemcached" method="__construct" priority="3">
+      The method __construct() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="97" endline="155" rule="NPathComplexity" ruleset="Code Size Rules" package="Zend_Cache\Zend_Cache_Backend" externalInfoUrl="http://phpmd.org/rules/codesize.html#npathcomplexity" class="Zend_Cache_Backend_Libmemcached" method="__construct" priority="3">
+      The method __construct() has an NPath complexity of 300. The configured NPath complexity threshold is 200.
+    </violation>
+    <violation beginline="413" endline="413" rule="UnusedLocalVariable" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedlocalvariable" priority="3">
+      Avoid unused local variables such as '$data'.
+    </violation>
+  </file>
+  <file name="/home/www/www1/library/Zend/Cache/Backend/Memcached.php">
+    <violation beginline="41" endline="504" rule="ExcessiveClassComplexity" ruleset="Code Size Rules" package="Zend_Cache\Zend_Cache_Backend" externalInfoUrl="http://phpmd.org/rules/codesize.html#excessiveclasscomplexity" class="Zend_Cache_Backend_Memcached" priority="3">
+      The class Zend_Cache_Backend_Memcached has an overall complexity of 53 which is very high. The configured complexity threshold is 50.
+    </violation>
+    <violation beginline="120" endline="169" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="Zend_Cache\Zend_Cache_Backend" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="Zend_Cache_Backend_Memcached" method="__construct" priority="3">
+      The method __construct() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="120" endline="169" rule="NPathComplexity" ruleset="Code Size Rules" package="Zend_Cache\Zend_Cache_Backend" externalInfoUrl="http://phpmd.org/rules/codesize.html#npathcomplexity" class="Zend_Cache_Backend_Memcached" method="__construct" priority="3">
+      The method __construct() has an NPath complexity of 1542. The configured NPath complexity threshold is 200.
+    </violation>
+    <violation beginline="424" endline="424" rule="UnusedLocalVariable" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedlocalvariable" priority="3">
+      Avoid unused local variables such as '$data'.
+    </violation>
+  </file>
+  <file name="/home/www/www1/library/Zend/Cache/Backend/Sqlite.php">
+    <violation beginline="40" endline="678" rule="TooManyMethods" ruleset="Code Size Rules" package="Zend_Cache\Zend_Cache_Backend" externalInfoUrl="http://phpmd.org/rules/codesize.html#toomanymethods" class="Zend_Cache_Backend_Sqlite" priority="3">
+      The class Zend_Cache_Backend_Sqlite has 17 methods. Consider refactoring Zend_Cache_Backend_Sqlite to keep number of methods under 10.
+    </violation>
+    <violation beginline="40" endline="678" rule="ExcessiveClassComplexity" ruleset="Code Size Rules" package="Zend_Cache\Zend_Cache_Backend" externalInfoUrl="http://phpmd.org/rules/codesize.html#excessiveclasscomplexity" class="Zend_Cache_Backend_Sqlite" priority="3">
+      The class Zend_Cache_Backend_Sqlite has an overall complexity of 86 which is very high. The configured complexity threshold is 50.
+    </violation>
+    <violation beginline="614" endline="656" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="Zend_Cache\Zend_Cache_Backend" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="Zend_Cache_Backend_Sqlite" method="_clean" priority="3">
+      The method _clean() has a Cyclomatic Complexity of 14. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="/home/www/www1/library/Zend/Cache/Backend/Static.php">
+    <violation beginline="39" endline="564" rule="TooManyMethods" ruleset="Code Size Rules" package="Zend_Cache\Zend_Cache_Backend" externalInfoUrl="http://phpmd.org/rules/codesize.html#toomanymethods" class="Zend_Cache_Backend_Static" priority="3">
+      The class Zend_Cache_Backend_Static has 13 methods. Consider refactoring Zend_Cache_Backend_Static to keep number of methods under 10.
+    </violation>
+    <violation beginline="39" endline="564" rule="ExcessiveClassComplexity" ruleset="Code Size Rules" package="Zend_Cache\Zend_Cache_Backend" externalInfoUrl="http://phpmd.org/rules/codesize.html#excessiveclasscomplexity" class="Zend_Cache_Backend_Static" priority="3">
+      The class Zend_Cache_Backend_Static has an overall complexity of 94 which is very high. The configured complexity threshold is 50.
+    </violation>
+    <violation beginline="201" endline="257" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="Zend_Cache\Zend_Cache_Backend" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="Zend_Cache_Backend_Static" method="save" priority="3">
+      The method save() has a Cyclomatic Complexity of 14. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="201" endline="257" rule="NPathComplexity" ruleset="Code Size Rules" package="Zend_Cache\Zend_Cache_Backend" externalInfoUrl="http://phpmd.org/rules/codesize.html#npathcomplexity" class="Zend_Cache_Backend_Static" method="save" priority="3">
+      The method save() has an NPath complexity of 3072. The configured NPath complexity threshold is 200.
+    </violation>
+    <violation beginline="330" endline="364" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="Zend_Cache\Zend_Cache_Backend" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="Zend_Cache_Backend_Static" method="removeRecursively" priority="3">
+      The method removeRecursively() has a Cyclomatic Complexity of 11. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="383" endline="455" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="Zend_Cache\Zend_Cache_Backend" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="Zend_Cache_Backend_Static" method="clean" priority="3">
+      The method clean() has a Cyclomatic Complexity of 24. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="/home/www/www1/library/Zend/Cache/Backend/Test.php">
+    <violation beginline="103" endline="129" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="Zend_Cache\Zend_Cache_Backend" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="Zend_Cache_Backend_Test" method="load" priority="3">
+      The method load() has a Cyclomatic Complexity of 15. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="/home/www/www1/library/Zend/Cache/Backend/TwoLevels.php">
+    <violation beginline="42" endline="536" rule="TooManyMethods" ruleset="Code Size Rules" package="Zend_Cache\Zend_Cache_Backend" externalInfoUrl="http://phpmd.org/rules/codesize.html#toomanymethods" class="Zend_Cache_Backend_TwoLevels" priority="3">
+      The class Zend_Cache_Backend_TwoLevels has 11 methods. Consider refactoring Zend_Cache_Backend_TwoLevels to keep number of methods under 10.
+    </violation>
+    <violation beginline="42" endline="536" rule="ExcessiveClassComplexity" ruleset="Code Size Rules" package="Zend_Cache\Zend_Cache_Backend" externalInfoUrl="http://phpmd.org/rules/codesize.html#excessiveclasscomplexity" class="Zend_Cache_Backend_TwoLevels" priority="3">
+      The class Zend_Cache_Backend_TwoLevels has an overall complexity of 59 which is very high. The configured complexity threshold is 50.
+    </violation>
+    <violation beginline="284" endline="325" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="Zend_Cache\Zend_Cache_Backend" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="Zend_Cache_Backend_TwoLevels" method="clean" priority="3">
+      The method clean() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="/home/www/www1/library/Zend/Cache/Backend/WinCache.php">
+    <violation beginline="282" endline="282" rule="UnusedLocalVariable" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedlocalvariable" priority="3">
+      Avoid unused local variables such as '$data'.
+    </violation>
+  </file>
+  <file name="/home/www/www1/library/Zend/Cache/Backend/Xcache.php">
+    <violation beginline="167" endline="209" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="Zend_Cache\Zend_Cache_Backend" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="Zend_Cache_Backend_Xcache" method="clean" priority="3">
+      The method clean() has a Cyclomatic Complexity of 12. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="/home/www/www1/library/Zend/Cache/Backend/ZendPlatform.php">
+    <violation beginline="42" endline="317" rule="ExcessiveClassComplexity" ruleset="Code Size Rules" package="Zend_Cache\Zend_Cache_Backend" externalInfoUrl="http://phpmd.org/rules/codesize.html#excessiveclasscomplexity" class="Zend_Cache_Backend_ZendPlatform" priority="3">
+      The class Zend_Cache_Backend_ZendPlatform has an overall complexity of 51 which is very high. The configured complexity threshold is 50.
+    </violation>
+    <violation beginline="185" endline="249" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="Zend_Cache\Zend_Cache_Backend" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="Zend_Cache_Backend_ZendPlatform" method="clean" priority="3">
+      The method clean() has a Cyclomatic Complexity of 17. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="260" endline="289" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="Zend_Cache\Zend_Cache_Backend" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="Zend_Cache_Backend_ZendPlatform" method="_clean" priority="3">
+      The method _clean() has a Cyclomatic Complexity of 13. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="/home/www/www1/library/Zend/Cache/Core.php">
+    <violation beginline="28" endline="764" rule="TooManyMethods" ruleset="Code Size Rules" package="Zend_Cache" externalInfoUrl="http://phpmd.org/rules/codesize.html#toomanymethods" class="Zend_Cache_Core" priority="3">
+      The class Zend_Cache_Core has 13 methods. Consider refactoring Zend_Cache_Core to keep number of methods under 10.
+    </violation>
+    <violation beginline="28" endline="764" rule="ExcessiveClassComplexity" ruleset="Code Size Rules" package="Zend_Cache" externalInfoUrl="http://phpmd.org/rules/codesize.html#excessiveclasscomplexity" class="Zend_Cache_Core" priority="3">
+      The class Zend_Cache_Core has an overall complexity of 107 which is very high. The configured complexity threshold is 50.
+    </violation>
+    <violation beginline="347" endline="412" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="Zend_Cache" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="Zend_Cache_Core" method="save" priority="3">
+      The method save() has a Cyclomatic Complexity of 16. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="347" endline="412" rule="NPathComplexity" ruleset="Code Size Rules" package="Zend_Cache" externalInfoUrl="http://phpmd.org/rules/codesize.html#npathcomplexity" class="Zend_Cache_Core" method="save" priority="3">
+      The method save() has an NPath complexity of 4320. The configured NPath complexity threshold is 200.
+    </violation>
+  </file>
+  <file name="/home/www/www1/library/Zend/Cache/Frontend/File.php">
+    <violation beginline="207" endline="207" rule="UnusedLocalVariable" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedlocalvariable" priority="3">
+      Avoid unused local variables such as '$res'.
+    </violation>
+  </file>
+  <file name="/home/www/www1/library/Zend/Cache/Frontend/Function.php">
+    <violation beginline="134" endline="177" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="Zend_Cache\Zend_Cache_Frontend" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="Zend_Cache_Frontend_Function" method="makeId" priority="3">
+      The method makeId() has a Cyclomatic Complexity of 10. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="/home/www/www1/library/Zend/Cache/Frontend/Page.php">
+    <violation beginline="36" endline="404" rule="ExcessiveClassComplexity" ruleset="Code Size Rules" package="Zend_Cache\Zend_Cache_Frontend" externalInfoUrl="http://phpmd.org/rules/codesize.html#excessiveclasscomplexity" class="Zend_Cache_Frontend_Page" priority="3">
+      The class Zend_Cache_Frontend_Page has an overall complexity of 59 which is very high. The configured complexity threshold is 50.
+    </violation>
+    <violation beginline="222" endline="222" rule="UnusedLocalVariable" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedlocalvariable" priority="3">
+      Avoid unused local variables such as '$value'.
+    </violation>
+    <violation beginline="242" endline="292" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="Zend_Cache\Zend_Cache_Frontend" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="Zend_Cache_Frontend_Page" method="start" priority="3">
+      The method start() has a Cyclomatic Complexity of 14. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="242" endline="292" rule="NPathComplexity" ruleset="Code Size Rules" package="Zend_Cache\Zend_Cache_Frontend" externalInfoUrl="http://phpmd.org/rules/codesize.html#npathcomplexity" class="Zend_Cache_Frontend_Page" method="start" priority="3">
+      The method start() has an NPath complexity of 936. The configured NPath complexity threshold is 200.
+    </violation>
+    <violation beginline="314" endline="314" rule="UnusedLocalVariable" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedlocalvariable" priority="3">
+      Avoid unused local variables such as '$contentType'.
+    </violation>
+    <violation beginline="317" endline="317" rule="UnusedLocalVariable" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedlocalvariable" priority="3">
+      Avoid unused local variables such as '$key'.
+    </violation>
+    <violation beginline="363" endline="402" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="Zend_Cache\Zend_Cache_Frontend" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="Zend_Cache_Frontend_Page" method="_makePartialId" priority="3">
+      The method _makePartialId() has a Cyclomatic Complexity of 11. The configured cyclomatic complexity threshold is 10.
+    </violation>
+  </file>
+  <file name="/home/www/www1/library/Zend/Cache/Manager.php">
+    <violation beginline="151" endline="177" rule="CyclomaticComplexity" ruleset="Code Size Rules" package="Zend_Cache" externalInfoUrl="http://phpmd.org/rules/codesize.html#cyclomaticcomplexity" class="Zend_Cache_Manager" method="getCache" priority="3">
+      The method getCache() has a Cyclomatic Complexity of 11. The configured cyclomatic complexity threshold is 10.
+    </violation>
+    <violation beginline="151" endline="177" rule="NPathComplexity" ruleset="Code Size Rules" package="Zend_Cache" externalInfoUrl="http://phpmd.org/rules/codesize.html#npathcomplexity" class="Zend_Cache_Manager" method="getCache" priority="3">
+      The method getCache() has an NPath complexity of 25002. The configured NPath complexity threshold is 200.
+    </violation>
+    <violation beginline="187" endline="187" rule="UnusedLocalVariable" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedlocalvariable" priority="3">
+      Avoid unused local variables such as '$tmp'.
+    </violation>
+  </file>
+  <file name="/home/www/www1/library/Zend/Config.php">
+    <violation beginline="29" endline="484" rule="TooManyMethods" ruleset="Code Size Rules" package="Zend_Config" externalInfoUrl="http://phpmd.org/rules/codesize.html#toomanymethods" class="Zend_Config" priority="3">
+      The class Zend_Config has 19 methods. Consider refactoring Zend_Config to keep number of methods under 10.
+    </violation>
+    <violation beginline="29" endline="484" rule="ExcessiveClassComplexity" ruleset="Code Size Rules" package="Zend_Config" externalInfoUrl="http://phpmd.org/rules/codesize.html#excessiveclasscomplexity" class="Zend_Config" priority="3">
+      The class Zend_Config has an overall complexity of 55 which is very high. The configured complexity threshold is 50.
+    </violation>
+    <violation beginline="371" endline="371" rule="UnusedLocalVariable" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedlocalvariable" priority="3">
+      Avoid unused local variables such as '$key'.
+    </violation>
+    <violation beginline="447" endline="447" rule="UnusedFormalParameter" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedformalparameter" priority="3">
+      Avoid unused parameters such as '$errno'.
+    </violation>
+    <violation beginline="447" endline="447" rule="UnusedFormalParameter" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedformalparameter" priority="3">
+      Avoid unused parameters such as '$errfile'.
+    </violation>
+    <violation beginline="447" endline="447" rule="UnusedFormalParameter" ruleset="Unused Code Rules" externalInfoUrl="http://phpmd.org/rules/unusedcode.html#unusedformalparameter" priority="3">
+      Avoid unused parameters such as '$errline'.
+    </violation>
+  </file>
+</pmd>

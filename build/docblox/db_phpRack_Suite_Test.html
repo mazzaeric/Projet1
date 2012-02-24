@@ -1,0 +1,811 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>DocBlox Documentation</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/jquery-ui.css" type="text/css"></link><link rel="stylesheet" href="css/docblox/jquery-ui-1.8.16.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.tools.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+            $(document).ready(function() {
+                $(".filetree").treeview({
+                    collapsed: true,
+                    persist: "cookie"
+                });
+
+                $("#accordion").accordion({
+                    collapsible: true,
+                    autoHeight:  false,
+                    fillSpace:   true
+                });
+
+                $(".tabs").tabs();
+            });
+        </script></head><body><div xmlns="" id="content">
+<script xmlns:dbx="http://docblox-project.org/xsl/functions">
+
+      function filterElements()
+      {
+        inherited = !$('#show-inherited').hasClass('deselected');
+        public    = !$('#show-public').hasClass('deselected');
+        protected = !$('#show-protected').hasClass('deselected');
+        private   = !$('#show-private').hasClass('deselected');
+
+        $('div.public').each(function(index, val) {
+            $(val).toggle(public && !($(val).hasClass('inherited_from') && !inherited));
+        });
+        $('div.protected').each(function(index, val) {
+            $(val).toggle(protected && !($(val).hasClass('inherited_from') && !inherited));
+        });
+        $('div.private').each(function(index, val) {
+            $(val).toggle(private && !($(val).hasClass('inherited_from') && !inherited));
+        });
+      }
+
+      $(document).ready(function() {
+        $('a.gripper').click(function() {
+            $(this).nextAll('div.code-tabs').slideToggle();
+            $(this).children('img').toggle();
+            return false;
+        });
+
+        $('div.method code span.highlight,div.function code span.highlight,div.constant code span.highlight,div.property code span.highlight').css('cursor', 'pointer');
+
+        $('div.method code span.highlight,div.function code span.highlight,div.constant code span.highlight,div.property code span.highlight').click(function() {
+            $(this).parent().nextAll('div.code-tabs').slideToggle();
+            $(this).parent().prevAll('a.gripper').children('img').toggle();
+            return false;
+        });
+
+        $('div.code-tabs').hide();
+        $('a.gripper').show();
+        $('div.code-tabs:empty').prevAll('a.gripper').html('');
+
+        $('#show-public, #show-protected, #show-private, #show-inherited')
+            .css('cursor', 'pointer')
+            .click(function(){
+                $(this).toggleClass('deselected');
+                if ($(this).hasClass('deselected')) {
+                  $(this).fadeTo('fast', '0.4');
+                } else {
+                  $(this).fadeTo('fast', '1.0');
+                }
+                filterElements();
+                return false;
+            });
+        $('#show-protected, #show-private').click();
+
+        // add the sliding behaviour to the file navigation and show it
+        // it is initially hidden for non-JS users.
+        $("#file-nav-box").show().hover(function() {
+            $("#file-nav-container").slideDown(400);
+        }, function() {
+            $("#file-nav-container").slideUp(400);
+        });
+      });
+
+      
+    </script><h1 xmlns:dbx="http://docblox-project.org/xsl/functions" class="file">phpRack/Suite/Test.php</h1>
+<div xmlns:dbx="http://docblox-project.org/xsl/functions" id="file-nav-box">
+<div id="file-nav-options">
+              Show:
+              <img src="images/icons/visibility_public.png" id="show-public"><img src="images/icons/visibility_protected.png" id="show-protected"><img src="images/icons/visibility_private.png" id="show-private"><span class="attribute" id="show-inherited">inherited</span>
+</div>
+<div id="file-nav-container">
+<ul id="file-nav"><li>
+<a href="#classes"><img src="images/icons/class.png" height="14">
+                          Classes
+                      </a><ul><li><a href="#%5CPhpRack_Suite_Test">\PhpRack_Suite_Test</a></li></ul>
+</li></ul>
+<div style="clear: left;"></div>
+</div>
+<div id="file-nav-tab">
+              Table of Contents
+          </div>
+</div>
+<a xmlns:dbx="http://docblox-project.org/xsl/functions" name="top" class="anchor"></a><a name="classes" class="anchor"></a><a xmlns:dbx="http://docblox-project.org/xsl/functions" id="\PhpRack_Suite_Test" class="anchor"></a><h2 xmlns:dbx="http://docblox-project.org/xsl/functions" class="class">\PhpRack_Suite_Test<div class="to-top"><a href="#top">jump to top</a></div>
+</h2>
+<div xmlns:dbx="http://docblox-project.org/xsl/functions" class="class">
+<small class="package"><b>Package: </b>Tests</small><p class="short-description">Parent class of all tests in suite library</p>
+<div class="long-description"></div>
+<dl class="class-info">
+<dt>Parent(s)</dt>
+<dd><a href="db_phpRack_Test.html#%5CphpRack_Test">\phpRack_Test</a></dd>
+</dl>
+<h3>Constants</h3>
+<div>
+<a id="\PhpRack_Suite_Test::OK" class="anchor"></a><div class="constant publicC inherited_from ">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/constant.png" alt="Constant"> 
+                <span class="highlight">OK</span>
+                = 'OK'</code><div class="description">
+<span class="attribute">inherited</span><small>Inherited from:
+                        <a href="db_phpRack_Test.html#%5CphpRack_Test::OK">\phpRack_Test::OK</a></small>
+</div>
+<div class="code-tabs"><dl class="constant-info">
+<dt>Inherited_from</dt>
+<dd>
+<a href="db_phpRack_Test.html#%5CphpRack_Test::OK">\phpRack_Test::OK</a>
+         
+    </dd>
+</dl></div>
+<div class="clear"></div>
+</div>
+<a id="\PhpRack_Suite_Test::FAILURE" class="anchor"></a><div class="constant publicC inherited_from ">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/constant.png" alt="Constant"> 
+                <span class="highlight">FAILURE</span>
+                = 'FAILURE'</code><div class="description">
+<span class="attribute">inherited</span><small>Inherited from:
+                        <a href="db_phpRack_Test.html#%5CphpRack_Test::FAILURE">\phpRack_Test::FAILURE</a></small>
+</div>
+<div class="code-tabs"><dl class="constant-info">
+<dt>Inherited_from</dt>
+<dd>
+<a href="db_phpRack_Test.html#%5CphpRack_Test::FAILURE">\phpRack_Test::FAILURE</a>
+         
+    </dd>
+</dl></div>
+<div class="clear"></div>
+</div>
+<a id="\PhpRack_Suite_Test::DEFAULT_TIMEZONE" class="anchor"></a><div class="constant publicC inherited_from ">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/constant.png" alt="Constant"> 
+                <span class="highlight">DEFAULT_TIMEZONE</span>
+                = 'EST'</code><div class="description">
+<span class="attribute">inherited</span><p class="short-description">This timezone will be used in there is NO timezone
+set on the server</p>
+<small>Inherited from:
+                        <a href="db_phpRack_Test.html#%5CphpRack_Test::DEFAULT_TIMEZONE">\phpRack_Test::DEFAULT_TIMEZONE</a></small>
+</div>
+<div class="code-tabs">
+<div class="long-description"></div>
+<dl class="constant-info">
+<dt>Inherited_from</dt>
+<dd>
+<a href="db_phpRack_Test.html#%5CphpRack_Test::DEFAULT_TIMEZONE">\phpRack_Test::DEFAULT_TIMEZONE</a>
+         
+    </dd>
+<dt>See</dt>
+<dd>\setUp()
+         
+    </dd>
+</dl>
+</div>
+<div class="clear"></div>
+</div>
+</div>
+<h3>Properties</h3>
+<div>
+<a id="\PhpRack_Suite_Test::$_ajaxOptions" class="anchor"></a><div class="property private inherited_from ">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/property.png" alt="Property"><img src="images/icons/visibility_private.png" style="margin-right: 5px" alt="private">array
+                 <span class="highlight">$_ajaxOptions</span>= 'array(
+        'autoStart'          =&gt; true, // start it when front is loaded
+        'reload'             =&gt; false, // reload every X seconds, in AJAX
+        'linesCount'         =&gt; null, // how many lines should be displayed on browser side when we use tailf method
+        'secVisible'         =&gt; null, // how long these lines should be visible (in seconds)
+        'attachOutput'       =&gt; false, // attach output to previous result log
+        'data'               =&gt; array(), // used for store data which should be returned in next ajax query
+        'fileLastOffset'     =&gt; null, // used for control offset to read in phpRack_Package_Disc_File::tailf()
+        'logSizeLimit'       =&gt; 100, // maximum size of log, in KB
+        'pauseWhenFocusLost' =&gt; true, // stop ajax requests when window lost focus
+        'tags'               =&gt; array(), // used for store available options for parametrized test
+        'tag'                =&gt; null // selected tag param from front end
+    )'
+                </code><div class="description">
+<span class="attribute">inherited</span><p class="short-description">Ajax options to control front page behavior</p><small>Inherited from:
+                        <a href="db_phpRack_Test.html#%5CphpRack_Test::%24%24_ajaxOptions">\phpRack_Test::$$_ajaxOptions</a></small>
+</div>
+<div class="code-tabs">
+<div class="long-description"></div>
+<strong>Default value</strong><code>array(
+        'autoStart'          =&gt; true, // start it when front is loaded
+        'reload'             =&gt; false, // reload every X seconds, in AJAX
+        'linesCount'         =&gt; null, // how many lines should be displayed on browser side when we use tailf method
+        'secVisible'         =&gt; null, // how long these lines should be visible (in seconds)
+        'attachOutput'       =&gt; false, // attach output to previous result log
+        'data'               =&gt; array(), // used for store data which should be returned in next ajax query
+        'fileLastOffset'     =&gt; null, // used for control offset to read in phpRack_Package_Disc_File::tailf()
+        'logSizeLimit'       =&gt; 100, // maximum size of log, in KB
+        'pauseWhenFocusLost' =&gt; true, // stop ajax requests when window lost focus
+        'tags'               =&gt; array(), // used for store available options for parametrized test
+        'tag'                =&gt; null // selected tag param from front end
+    )</code><strong>Details</strong><dl class="property-info">
+<dt>Type</dt>
+<dd>array</dd>
+<dt>Inherited_from</dt>
+<dd>
+<a href="db_phpRack_Test.html#%5CphpRack_Test::%24%24_ajaxOptions">\phpRack_Test::$$_ajaxOptions</a>
+         
+    </dd>
+<dt>See</dt>
+<dd>\setAjaxOptions()
+         
+    </dd>
+<dt>See</dt>
+<dd>\getAjaxOptions()
+         
+    </dd>
+</dl>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\PhpRack_Suite_Test::$_assertion" class="anchor"></a><div class="property protected inherited_from ">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/property.png" alt="Property"><img src="images/icons/visibility_protected.png" style="margin-right: 5px" alt="protected">\phpRack_Assertion
+                 <span class="highlight">$_assertion</span>= 'null'
+                </code><div class="description">
+<span class="attribute">inherited</span><p class="short-description">Assertion to use</p><small>Inherited from:
+                        <a href="db_phpRack_Test.html#%5CphpRack_Test::%24%24_assertion">\phpRack_Test::$$_assertion</a></small>
+</div>
+<div class="code-tabs">
+<div class="long-description"></div>
+<strong>Default value</strong><code>null</code><strong>Details</strong><dl class="property-info">
+<dt>Type</dt>
+<dd><a href="db_phpRack_Assertion.html#%5CphpRack_Assertion">\phpRack_Assertion</a></dd>
+<dt>Inherited_from</dt>
+<dd>
+<a href="db_phpRack_Test.html#%5CphpRack_Test::%24%24_assertion">\phpRack_Test::$$_assertion</a>
+         
+    </dd>
+<dt>See</dt>
+<dd>\__get()
+         
+    </dd>
+</dl>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\PhpRack_Suite_Test::$_config" class="anchor"></a><div class="property protected">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/property.png" alt="Property"><img src="images/icons/visibility_protected.png" style="margin-right: 5px" alt="protected">array
+                 <span class="highlight">$_config</span>= 'array()'
+                </code><div class="description">
+<p class="short-description">Configuration options</p></div>
+<div class="code-tabs">
+<div class="long-description"></div>
+<strong>Default value</strong><code>array()</code><strong>Details</strong><dl class="property-info">
+<dt>Type</dt>
+<dd>array</dd>
+<dt>See</dt>
+<dd>\setConfig()
+         
+    </dd>
+</dl>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\PhpRack_Suite_Test::$_fileName" class="anchor"></a><div class="property protected inherited_from ">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/property.png" alt="Property"><img src="images/icons/visibility_protected.png" style="margin-right: 5px" alt="protected">string
+                 <span class="highlight">$_fileName</span>= ''
+                </code><div class="description">
+<span class="attribute">inherited</span><p class="short-description">ID of the test (unique in the system)</p><small>Inherited from:
+                        <a href="db_phpRack_Test.html#%5CphpRack_Test::%24%24_fileName">\phpRack_Test::$$_fileName</a></small>
+</div>
+<div class="code-tabs">
+<div class="long-description"></div>
+<strong>Details</strong><dl class="property-info">
+<dt>Type</dt>
+<dd>string</dd>
+<dt>Inherited_from</dt>
+<dd>
+<a href="db_phpRack_Test.html#%5CphpRack_Test::%24%24_fileName">\phpRack_Test::$$_fileName</a>
+         
+    </dd>
+</dl>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\PhpRack_Suite_Test::$_runner" class="anchor"></a><div class="property protected inherited_from ">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/property.png" alt="Property"><img src="images/icons/visibility_protected.png" style="margin-right: 5px" alt="protected">\phpRack_Runner
+                 <span class="highlight">$_runner</span>= ''
+                </code><div class="description">
+<span class="attribute">inherited</span><p class="short-description">Runner of tests</p><small>Inherited from:
+                        <a href="db_phpRack_Test.html#%5CphpRack_Test::%24%24_runner">\phpRack_Test::$$_runner</a></small>
+</div>
+<div class="code-tabs">
+<div class="long-description"></div>
+<strong>Details</strong><dl class="property-info">
+<dt>Type</dt>
+<dd><a href="db_phpRack_Runner.html#%5CphpRack_Runner">\phpRack_Runner</a></dd>
+<dt>Inherited_from</dt>
+<dd>
+<a href="db_phpRack_Test.html#%5CphpRack_Test::%24%24_runner">\phpRack_Test::$$_runner</a>
+         
+    </dd>
+</dl>
+</div>
+<div class="clear"></div>
+</div>
+</div>
+<h3>Methods</h3>
+<div>
+<a id="\PhpRack_Suite_Test::__construct()" class="anchor"></a><div class="method protected inherited_from ">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_protected.png" style="margin-right: 5px" alt="protected"><span class="highlight">__construct</span><span class="nb-faded-text">(
+          string $fileName, <a href="db_phpRack_Runner.html#%5CphpRack_Runner">\phpRack_Runner</a> $runner
+          )
+        </span>
+        :
+          void</code><div class="description">
+<span class="attribute">final</span><span class="attribute">inherited</span><p class="short_description">Construct the class</p>
+<small>Inherited from:
+                    <a href="db_phpRack_Test.html#%5CphpRack_Test::__construct()">\phpRack_Test::__construct()</a></small>
+</div>
+<div class="code-tabs">
+<div class="long-description"><p>This constructor is going to be used only from factory() method. Making
+this method "private" leads to problems in PHP 5.2.5 and maybe earlier
+versions.</p></div>
+<strong>Parameters</strong><table class="argument-info">
+<thead><tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<th>$fileName</th>
+<td>string</td>
+<td><em><p>ID of the test, absolute (!) file name</p>
+</em></td>
+</tr>
+<tr>
+<th>$runner</th>
+<td><a href="db_phpRack_Runner.html#%5CphpRack_Runner">\phpRack_Runner</a></td>
+<td><em><p>Instance of test runner</p></em></td>
+</tr>
+</table>
+<strong>Details</strong><dl class="function-info">
+<dt>See</dt>
+<dd>\factory()
+         
+    </dd>
+</dl>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\PhpRack_Suite_Test::__get()" class="anchor"></a><div class="method public inherited_from ">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">__get</span><span class="nb-faded-text">(
+          string $name
+          )
+        </span>
+        :
+          mixed</code><div class="description">
+<span class="attribute">final</span><span class="attribute">inherited</span><p class="short_description">Dispatches property-like calls to the class</p>
+<small>Inherited from:
+                    <a href="db_phpRack_Test.html#%5CphpRack_Test::__get()">\phpRack_Test::__get()</a></small>
+</div>
+<div class="code-tabs">
+<div class="long-description"></div>
+<strong>Parameters</strong><table class="argument-info">
+<thead><tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<th>$name</th>
+<td>string</td>
+<td><em><p>Name of the property to get</p></em></td>
+</tr>
+</table>
+<strong>Returns</strong><table class="argument-info">
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<td>mixed</td>
+<td></td>
+</tr>
+</table>
+<strong>Throws</strong><table class="argument-info">
+<thead><tr>
+<th>Exception</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<td><a href="http://php.net/manual/en/class.exception.php">\Exception</a></td>
+<td><em>If nothing found</em></td>
+</tr>
+</table>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\PhpRack_Suite_Test::_init()" class="anchor"></a><div class="method protected inherited_from ">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_protected.png" style="margin-right: 5px" alt="protected"><span class="highlight">_init</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+          void</code><div class="description">
+<span class="attribute">inherited</span><p class="short_description">Allow child class to overwrite test default options, by overwritting this method
+If you want disable ajax auto start it is proper place for that</p>
+<small>Inherited from:
+                    <a href="db_phpRack_Test.html#%5CphpRack_Test::_init()">\phpRack_Test::_init()</a></small>
+</div>
+<div class="code-tabs">
+<div class="long-description"></div>
+<strong>Details</strong><dl class="function-info">
+<dt>See</dt>
+<dd>\__construct()
+         
+    </dd>
+</dl>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\PhpRack_Suite_Test::_log()" class="anchor"></a><div class="method protected inherited_from ">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_protected.png" style="margin-right: 5px" alt="protected"><span class="highlight">_log</span><span class="nb-faded-text">(
+          string $message
+          )
+        </span>
+        :
+          void</code><div class="description">
+<span class="attribute">inherited</span><p class="short_description">Log one message</p>
+<small>Inherited from:
+                    <a href="db_phpRack_Test.html#%5CphpRack_Test::_log()">\phpRack_Test::_log()</a></small>
+</div>
+<div class="code-tabs">
+<div class="long-description"></div>
+<strong>Parameters</strong><table class="argument-info">
+<thead><tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<th>$message</th>
+<td>string</td>
+<td><em><p>The message</p></em></td>
+</tr>
+</table>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\PhpRack_Suite_Test::assertEquals()" class="anchor"></a><div class="method public inherited_from ">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">assertEquals</span><span class="nb-faded-text">(
+          mixed $dest, mixed $src, string $message
+              =
+              null
+          )
+        </span>
+        :
+          <a href="db_phpRack_Suite_Test.html#%5CPhpRack_Suite_Test">\PhpRack_Suite_Test</a></code><div class="description">
+<span class="attribute">inherited</span><p class="short_description">Simple assertion method to compare two values</p>
+<small>Inherited from:
+                    <a href="db_phpRack_Test.html#%5CphpRack_Test::assertEquals()">\phpRack_Test::assertEquals()</a></small>
+</div>
+<div class="code-tabs">
+<div class="long-description"></div>
+<strong>Parameters</strong><table class="argument-info">
+<thead><tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<th>$dest</th>
+<td>mixed</td>
+<td><em><p>What we're expecting to have</p>
+</em></td>
+</tr>
+<tr>
+<th>$src</th>
+<td>mixed</td>
+<td><em><p>What we actually have</p></em></td>
+</tr>
+<tr>
+<th>$message</th>
+<td>string</td>
+<td><em><p>Optional message to show</p></em></td>
+</tr>
+</table>
+<strong>Returns</strong><table class="argument-info">
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<td><a href="db_phpRack_Suite_Test.html#%5CPhpRack_Suite_Test">\PhpRack_Suite_Test</a></td>
+<td></td>
+</tr>
+</table>
+<strong>Details</strong><dl class="function-info">
+<dt>Fluent</dt>
+<dd>This method is part of a fluent interface and will return the same instance
+         
+    </dd>
+</dl>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\PhpRack_Suite_Test::factory()" class="anchor"></a><div class="method public inherited_from ">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">factory</span><span class="nb-faded-text">(
+          string $fileName, <a href="db_phpRack_Runner.html#%5CphpRack_Runner">\phpRack_Runner</a> $runner
+          )
+        </span>
+        :
+          <a href="db_phpRack_Test.html#%5CphpRack_Test">\phpRack_Test</a></code><div class="description">
+<span class="attribute">static</span><span class="attribute">inherited</span><p class="short_description">Create new instance of the class, using PHP absolute file name</p>
+<small>Inherited from:
+                    <a href="db_phpRack_Test.html#%5CphpRack_Test::factory()">\phpRack_Test::factory()</a></small>
+</div>
+<div class="code-tabs">
+<div class="long-description"></div>
+<strong>Parameters</strong><table class="argument-info">
+<thead><tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<th>$fileName</th>
+<td>string</td>
+<td><em><p>ID of the test, absolute (!) file name</p>
+</em></td>
+</tr>
+<tr>
+<th>$runner</th>
+<td><a href="db_phpRack_Runner.html#%5CphpRack_Runner">\phpRack_Runner</a></td>
+<td><em><p>Instance of test runner</p></em></td>
+</tr>
+</table>
+<strong>Returns</strong><table class="argument-info">
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<td><a href="db_phpRack_Test.html#%5CphpRack_Test">\phpRack_Test</a></td>
+<td></td>
+</tr>
+</table>
+<strong>Throws</strong><table class="argument-info">
+<thead><tr>
+<th>Exception</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<td><a href="http://php.net/manual/en/class.exception.php">\Exception</a></td>
+<td><em></em></td>
+</tr>
+</table>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\PhpRack_Suite_Test::getAjaxOptions()" class="anchor"></a><div class="method public inherited_from ">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">getAjaxOptions</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+          array</code><div class="description">
+<span class="attribute">inherited</span><p class="short_description">Get ajax options</p>
+<small>Inherited from:
+                    <a href="db_phpRack_Test.html#%5CphpRack_Test::getAjaxOptions()">\phpRack_Test::getAjaxOptions()</a></small>
+</div>
+<div class="code-tabs">
+<div class="long-description"></div>
+<strong>Returns</strong><table class="argument-info">
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<td>array</td>
+<td></td>
+</tr>
+</table>
+<strong>Details</strong><dl class="function-info">
+<dt>See</dt>
+<dd>
+<a href="db_phpRack_Runner.html#%5CphpRack_Runner::run()">\phpRack_Runner::run()</a>
+         
+    </dd>
+<dt>See</dt>
+<dd>\index.phtml
+         
+    </dd>
+</dl>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\PhpRack_Suite_Test::getFileName()" class="anchor"></a><div class="method public inherited_from ">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">getFileName</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+          string</code><div class="description">
+<span class="attribute">inherited</span><p class="short_description">Get unique test ID (file name of the test)</p>
+<small>Inherited from:
+                    <a href="db_phpRack_Test.html#%5CphpRack_Test::getFileName()">\phpRack_Test::getFileName()</a></small>
+</div>
+<div class="code-tabs">
+<div class="long-description"></div>
+<strong>Returns</strong><table class="argument-info">
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<td>string</td>
+<td></td>
+</tr>
+</table>
+<strong>Details</strong><dl class="function-info">
+<dt>See</dt>
+<dd>\$this->_fileName
+         
+    </dd>
+</dl>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\PhpRack_Suite_Test::getLabel()" class="anchor"></a><div class="method public inherited_from ">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">getLabel</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+          string</code><div class="description">
+<span class="attribute">inherited</span><p class="short_description">Get label of the test</p>
+<small>Inherited from:
+                    <a href="db_phpRack_Test.html#%5CphpRack_Test::getLabel()">\phpRack_Test::getLabel()</a></small>
+</div>
+<div class="code-tabs">
+<div class="long-description"></div>
+<strong>Returns</strong><table class="argument-info">
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<td>string</td>
+<td></td>
+</tr>
+</table>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\PhpRack_Suite_Test::run()" class="anchor"></a><div class="method public inherited_from ">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">run</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+          <a href="db_phpRack_Result.html#%5CphpRack_Result">\phpRack_Result</a></code><div class="description">
+<span class="attribute">final</span><span class="attribute">inherited</span><p class="short_description">Run the test and return result</p>
+<small>Inherited from:
+                    <a href="db_phpRack_Test.html#%5CphpRack_Test::run()">\phpRack_Test::run()</a></small>
+</div>
+<div class="code-tabs">
+<div class="long-description"></div>
+<strong>Returns</strong><table class="argument-info">
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<td><a href="db_phpRack_Result.html#%5CphpRack_Result">\phpRack_Result</a></td>
+<td></td>
+</tr>
+</table>
+<strong>Details</strong><dl class="function-info">
+<dt>See</dt>
+<dd>
+<a href="db_phpRack_Runner.html#%5CphpRack_Runner::run()">\phpRack_Runner::run()</a>
+         
+    </dd>
+</dl>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\PhpRack_Suite_Test::setAjaxOptions()" class="anchor"></a><div class="method public inherited_from ">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">setAjaxOptions</span><span class="nb-faded-text">(
+          array $options
+          )
+        </span>
+        :
+          void</code><div class="description">
+<span class="attribute">inherited</span><p class="short_description">Set ajax options</p>
+<small>Inherited from:
+                    <a href="db_phpRack_Test.html#%5CphpRack_Test::setAjaxOptions()">\phpRack_Test::setAjaxOptions()</a></small>
+</div>
+<div class="code-tabs">
+<div class="long-description"></div>
+<strong>Parameters</strong><table class="argument-info">
+<thead><tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<th>$options</th>
+<td>array</td>
+<td><em><p>List of options to set</p></em></td>
+</tr>
+</table>
+<strong>Details</strong><dl class="function-info">
+<dt>See</dt>
+<dd>
+<a href="db_phpRack_Package_Disc_File.html#%5CphpRack_Package_Disc_File::tail()">\phpRack_Package_Disc_File::tail()</a>
+         
+    </dd>
+</dl>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\PhpRack_Suite_Test::setConfig()" class="anchor"></a><div class="method public">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">setConfig</span><span class="nb-faded-text">(
+          array $config
+              =
+              array()
+          )
+        </span>
+        :
+          void</code><div class="description">
+<span class="attribute">final</span><p class="short_description">Set configuration params</p>
+</div>
+<div class="code-tabs">
+<div class="long-description"></div>
+<strong>Parameters</strong><table class="argument-info">
+<thead><tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<th>$config</th>
+<td>array</td>
+<td><em><p>List of configuration options</p></em></td>
+</tr>
+</table>
+<strong>Throws</strong><table class="argument-info">
+<thead><tr>
+<th>Exception</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<td><a href="http://php.net/manual/en/class.exception.php">\Exception</a></td>
+<td><em></em></td>
+</tr>
+</table>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\PhpRack_Suite_Test::setUp()" class="anchor"></a><div class="method public inherited_from ">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">setUp</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+          void</code><div class="description">
+<span class="attribute">inherited</span><p class="short_description">Setup test environment, if necessary, before running every test</p>
+<small>Inherited from:
+                    <a href="db_phpRack_Test.html#%5CphpRack_Test::setUp()">\phpRack_Test::setUp()</a></small>
+</div>
+<div class="code-tabs">
+<div class="long-description"></div>
+<strong>Details</strong><dl class="function-info">
+<dt>See</dt>
+<dd>\run()
+         
+    </dd>
+</dl>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\PhpRack_Suite_Test::tearDown()" class="anchor"></a><div class="method public inherited_from ">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">tearDown</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+          void</code><div class="description">
+<span class="attribute">inherited</span><p class="short_description">Clean environment if necessary</p>
+<small>Inherited from:
+                    <a href="db_phpRack_Test.html#%5CphpRack_Test::tearDown()">\phpRack_Test::tearDown()</a></small>
+</div>
+<div class="code-tabs">
+<div class="long-description"></div>
+<strong>Details</strong><dl class="function-info">
+<dt>See</dt>
+<dd>\run()
+         
+    </dd>
+</dl>
+</div>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+</div>
+<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.18.1</a>.
+    </small></body></html>

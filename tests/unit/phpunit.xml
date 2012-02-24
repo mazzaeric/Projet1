@@ -1,0 +1,6 @@
+<phpunit colors="true">
+    <logging>
+        <log type="junit" target="../../build/logs/junit.xml" />
+        <log type="tap" target="../../build/logs/unit.tap" />
+    </logging>
+</phpunit>

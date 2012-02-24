@@ -1,0 +1,236 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>DocBlox Documentation</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/jquery-ui.css" type="text/css"></link><link rel="stylesheet" href="css/docblox/jquery-ui-1.8.16.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.tools.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+            $(document).ready(function() {
+                $(".filetree").treeview({
+                    collapsed: true,
+                    persist: "cookie"
+                });
+
+                $("#accordion").accordion({
+                    collapsible: true,
+                    autoHeight:  false,
+                    fillSpace:   true
+                });
+
+                $(".tabs").tabs();
+            });
+        </script></head><body><script xmlns="" type="text/javascript">
+        $(document).ready(function() {
+            $("#marker-accordion").accordion({
+                collapsible: true,
+                autoHeight:  false
+            });
+        });
+    </script><div xmlns="" id="content">
+<h1>Markers (TODO / FIXME)</h1>
+<div id="marker-accordion">
+<h3><a href="#">phpRack/Adapters/Cpu.php<small>1</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>todo</td>
+<td>38</td>
+<td>#17 How about Mac OS? There is no /proc directory in Mac OS</td>
+</tr>
+</table></div>
+<h3><a href="#">phpRack/Adapters/Cpu/Darwin.php<small>1</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>todo</td>
+<td>35</td>
+<td>#17 Should be implemented</td>
+</tr>
+</table></div>
+<h3><a href="#">phpRack/Suite/library/ServerHealth/TopProcessesTest.php<small>1</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>todo</td>
+<td>56</td>
+<td>#48 This test works only on Linux, so we should change it
+soon to something more portable</td>
+</tr>
+</table></div>
+<h3><a href="#">phpRack/Runner.php<small>2</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>todo</td>
+<td>277</td>
+<td>handle situation when login screen should appear</td>
+</tr>
+<tr>
+<td>todo</td>
+<td>305</td>
+<td>Now we work only with one notifier, which is in class phpRack_Mail. Later
+we should add other notifiers, like SMS, IRC, ICQ, etc. When we add them we
+should move our phpRack_Mail class to phpRack_Notifier_Mail and create other
+notifiers there.</td>
+</tr>
+</table></div>
+<h3><a href="#">Zend/Amf/Server.php<small>3</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>todo</td>
+<td>48</td>
+<td>Make the reflection methods cache and autoload.</td>
+</tr>
+<tr>
+<td>todo</td>
+<td>483</td>
+<td>should implement and SPL observer pattern for custom AMF headers</td>
+</tr>
+<tr>
+<td>todo</td>
+<td>483</td>
+<td>DescribeService support</td>
+</tr>
+</table></div>
+<h3><a href="#">Zend/Amf/Request.php<small>1</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>todo</td>
+<td>37</td>
+<td>Currently not checking if the object needs to be Type Mapped to a server object.</td>
+</tr>
+</table></div>
+<h3><a href="#">Zend/Amf/Util/BinaryStream.php<small>2</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>todo</td>
+<td>86</td>
+<td>Should check that there are enough bytes left in the stream we are about to read.</td>
+</tr>
+<tr>
+<td>todo</td>
+<td>238</td>
+<td>This could use the unpack() w/ S,n, or v</td>
+</tr>
+</table></div>
+<h3><a href="#">Zend/Amf/Parse/TypeLoader.php<small>1</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>todo</td>
+<td>44</td>
+<td>PHP 5.3 can drastically change this class w/ namespace and the new call_user_func w/ namespace</td>
+</tr>
+</table></div>
+<h3><a href="#">Zend/Amf/Parse/Amf3/Deserializer.php<small>4</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>todo</td>
+<td>29</td>
+<td>readObject to handle Typed Objects</td>
+</tr>
+<tr>
+<td>todo</td>
+<td>29</td>
+<td>readXMLStrimg to be implemented.</td>
+</tr>
+<tr>
+<td>todo</td>
+<td>29</td>
+<td>Class could be implemented as Factory Class with each data type it's own class.</td>
+</tr>
+<tr>
+<td>todo</td>
+<td>273</td>
+<td>Rather than using an array of traitsInfo create Zend_Amf_Value_TraitsInfo</td>
+</tr>
+</table></div>
+<h3><a href="#">Zend/Amf/Parse/Amf0/Deserializer.php<small>4</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>todo</td>
+<td>29</td>
+<td>Implement Typed Object Class Mapping</td>
+</tr>
+<tr>
+<td>todo</td>
+<td>29</td>
+<td>Class could be implemented as Factory Class with each data type it's own class</td>
+</tr>
+<tr>
+<td>todo</td>
+<td>189</td>
+<td>As of Flash Player 9 there is not support for mixed typed arrays
+so we handle this as an object. With the introduction of vectors
+in Flash Player 10 this may need to be reconsidered.</td>
+</tr>
+<tr>
+<td>todo</td>
+<td>254</td>
+<td>implement Typed Class mapping</td>
+</tr>
+</table></div>
+<h3><a href="#">Zend/Auth/Adapter/Http.php<small>3</small></a></h3>
+<div><table>
+<tr>
+<th>Type</th>
+<th>Line</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>todo</td>
+<td>30</td>
+<td>Support auth-int</td>
+</tr>
+<tr>
+<td>todo</td>
+<td>30</td>
+<td>Track nonces, nonce-count, opaque for replay protection and stale support</td>
+</tr>
+<tr>
+<td>todo</td>
+<td>30</td>
+<td>Support Authentication-Info header</td>
+</tr>
+</table></div>
+</div>
+</div></body></html>

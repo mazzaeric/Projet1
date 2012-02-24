@@ -1,0 +1,817 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>DocBlox Documentation</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/jquery-ui.css" type="text/css"></link><link rel="stylesheet" href="css/docblox/jquery-ui-1.8.16.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.tools.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+            $(document).ready(function() {
+                $(".filetree").treeview({
+                    collapsed: true,
+                    persist: "cookie"
+                });
+
+                $("#accordion").accordion({
+                    collapsible: true,
+                    autoHeight:  false,
+                    fillSpace:   true
+                });
+
+                $(".tabs").tabs();
+            });
+        </script></head><body><div xmlns="" id="content">
+<script xmlns:dbx="http://docblox-project.org/xsl/functions">
+
+      function filterElements()
+      {
+        inherited = !$('#show-inherited').hasClass('deselected');
+        public    = !$('#show-public').hasClass('deselected');
+        protected = !$('#show-protected').hasClass('deselected');
+        private   = !$('#show-private').hasClass('deselected');
+
+        $('div.public').each(function(index, val) {
+            $(val).toggle(public && !($(val).hasClass('inherited_from') && !inherited));
+        });
+        $('div.protected').each(function(index, val) {
+            $(val).toggle(protected && !($(val).hasClass('inherited_from') && !inherited));
+        });
+        $('div.private').each(function(index, val) {
+            $(val).toggle(private && !($(val).hasClass('inherited_from') && !inherited));
+        });
+      }
+
+      $(document).ready(function() {
+        $('a.gripper').click(function() {
+            $(this).nextAll('div.code-tabs').slideToggle();
+            $(this).children('img').toggle();
+            return false;
+        });
+
+        $('div.method code span.highlight,div.function code span.highlight,div.constant code span.highlight,div.property code span.highlight').css('cursor', 'pointer');
+
+        $('div.method code span.highlight,div.function code span.highlight,div.constant code span.highlight,div.property code span.highlight').click(function() {
+            $(this).parent().nextAll('div.code-tabs').slideToggle();
+            $(this).parent().prevAll('a.gripper').children('img').toggle();
+            return false;
+        });
+
+        $('div.code-tabs').hide();
+        $('a.gripper').show();
+        $('div.code-tabs:empty').prevAll('a.gripper').html('');
+
+        $('#show-public, #show-protected, #show-private, #show-inherited')
+            .css('cursor', 'pointer')
+            .click(function(){
+                $(this).toggleClass('deselected');
+                if ($(this).hasClass('deselected')) {
+                  $(this).fadeTo('fast', '0.4');
+                } else {
+                  $(this).fadeTo('fast', '1.0');
+                }
+                filterElements();
+                return false;
+            });
+        $('#show-protected, #show-private').click();
+
+        // add the sliding behaviour to the file navigation and show it
+        // it is initially hidden for non-JS users.
+        $("#file-nav-box").show().hover(function() {
+            $("#file-nav-container").slideDown(400);
+        }, function() {
+            $("#file-nav-container").slideUp(400);
+        });
+      });
+
+      
+    </script><h1 xmlns:dbx="http://docblox-project.org/xsl/functions" class="file">phpRack/Adapters/Notifier/Mail/Smtp.php</h1>
+<div xmlns:dbx="http://docblox-project.org/xsl/functions" id="file-nav-box">
+<div id="file-nav-options">
+              Show:
+              <img src="images/icons/visibility_public.png" id="show-public"><img src="images/icons/visibility_protected.png" id="show-protected"><img src="images/icons/visibility_private.png" id="show-private"><span class="attribute" id="show-inherited">inherited</span>
+</div>
+<div id="file-nav-container">
+<ul id="file-nav"><li>
+<a href="#classes"><img src="images/icons/class.png" height="14">
+                          Classes
+                      </a><ul><li><a href="#%5CphpRack_Adapters_Notifier_Mail_Smtp">\phpRack_Adapters_Notifier_Mail_Smtp</a></li></ul>
+</li></ul>
+<div style="clear: left;"></div>
+</div>
+<div id="file-nav-tab">
+              Table of Contents
+          </div>
+</div>
+<a xmlns:dbx="http://docblox-project.org/xsl/functions" name="top" class="anchor"></a><a name="classes" class="anchor"></a><a xmlns:dbx="http://docblox-project.org/xsl/functions" id="\phpRack_Adapters_Notifier_Mail_Smtp" class="anchor"></a><h2 xmlns:dbx="http://docblox-project.org/xsl/functions" class="class">\phpRack_Adapters_Notifier_Mail_Smtp<div class="to-top"><a href="#top">jump to top</a></div>
+</h2>
+<div xmlns:dbx="http://docblox-project.org/xsl/functions" class="class">
+<small class="package"><b>Package: </b>Default</small><p class="short-description">Smtp implementation of phpRack mail</p>
+<div class="long-description"></div>
+<dl class="class-info">
+<dt>Parent(s)</dt>
+<dd><a href="db_phpRack_Adapters_Notifier_Mail_Abstract.html#%5CphpRack_Adapters_Notifier_Mail_Abstract">\phpRack_Adapters_Notifier_Mail_Abstract</a></dd>
+<dt>See</dt>
+<dd>\phpRack_Notifier_Mail_Abstract
+         
+    </dd>
+</dl>
+<h3>Properties</h3>
+<div>
+<a id="\phpRack_Adapters_Notifier_Mail_Smtp::$_address" class="anchor"></a><div class="property protected">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/property.png" alt="Property"><img src="images/icons/visibility_protected.png" style="margin-right: 5px" alt="protected">string
+                 <span class="highlight">$_address</span>= ''
+                </code><div class="description">
+<p class="short-description">Connection address for the stream</p></div>
+<div class="code-tabs">
+<div class="long-description"></div>
+<strong>Details</strong><dl class="property-info">
+<dt>Type</dt>
+<dd>string</dd>
+<dt>See</dt>
+<dd>\_connect();
+         
+    </dd>
+</dl>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\phpRack_Adapters_Notifier_Mail_Smtp::$_body" class="anchor"></a><div class="property protected inherited_from ">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/property.png" alt="Property"><img src="images/icons/visibility_protected.png" style="margin-right: 5px" alt="protected">string
+                 <span class="highlight">$_body</span>= ''
+                </code><div class="description">
+<span class="attribute">inherited</span><p class="short-description">Default text of the body</p><small>Inherited from:
+                        <a href="db_phpRack_Adapters_Notifier_Mail_Abstract.html#%5CphpRack_Adapters_Notifier_Mail_Abstract::%24%24_body">\phpRack_Adapters_Notifier_Mail_Abstract::$$_body</a></small>
+</div>
+<div class="code-tabs">
+<div class="long-description"></div>
+<strong>Details</strong><dl class="property-info">
+<dt>Type</dt>
+<dd>string</dd>
+<dt>Inherited_from</dt>
+<dd>
+<a href="db_phpRack_Adapters_Notifier_Mail_Abstract.html#%5CphpRack_Adapters_Notifier_Mail_Abstract::%24%24_body">\phpRack_Adapters_Notifier_Mail_Abstract::$$_body</a>
+         
+    </dd>
+<dt>See</dt>
+<dd>\setBody()
+         
+    </dd>
+</dl>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\phpRack_Adapters_Notifier_Mail_Smtp::$_connection" class="anchor"></a><div class="property protected">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/property.png" alt="Property"><img src="images/icons/visibility_protected.png" style="margin-right: 5px" alt="protected">resource
+                 <span class="highlight">$_connection</span>= ''
+                </code><div class="description">
+<p class="short-description">Connection entry point</p></div>
+<div class="code-tabs">
+<div class="long-description"></div>
+<strong>Details</strong><dl class="property-info">
+<dt>Type</dt>
+<dd>resource</dd>
+<dt>See</dt>
+<dd>\_connect()
+         
+    </dd>
+<dt>See</dt>
+<dd>\_query()
+         
+    </dd>
+</dl>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\phpRack_Adapters_Notifier_Mail_Smtp::$_from" class="anchor"></a><div class="property protected inherited_from ">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/property.png" alt="Property"><img src="images/icons/visibility_protected.png" style="margin-right: 5px" alt="protected">string
+                 <span class="highlight">$_from</span>= ''no-reply@phprack.com''
+                </code><div class="description">
+<span class="attribute">inherited</span><p class="short-description">Sender e-mail address</p><small>Inherited from:
+                        <a href="db_phpRack_Adapters_Notifier_Mail_Abstract.html#%5CphpRack_Adapters_Notifier_Mail_Abstract::%24%24_from">\phpRack_Adapters_Notifier_Mail_Abstract::$$_from</a></small>
+</div>
+<div class="code-tabs">
+<div class="long-description"></div>
+<strong>Default value</strong><code>'no-reply@phprack.com'</code><strong>Details</strong><dl class="property-info">
+<dt>Type</dt>
+<dd>string</dd>
+<dt>Inherited_from</dt>
+<dd>
+<a href="db_phpRack_Adapters_Notifier_Mail_Abstract.html#%5CphpRack_Adapters_Notifier_Mail_Abstract::%24%24_from">\phpRack_Adapters_Notifier_Mail_Abstract::$$_from</a>
+         
+    </dd>
+</dl>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\phpRack_Adapters_Notifier_Mail_Smtp::$_log" class="anchor"></a><div class="property protected">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/property.png" alt="Property"><img src="images/icons/visibility_protected.png" style="margin-right: 5px" alt="protected">array
+                 <span class="highlight">$_log</span>= 'array()'
+                </code><div class="description">
+<p class="short-description">Stores debug information</p></div>
+<div class="code-tabs">
+<div class="long-description"></div>
+<strong>Default value</strong><code>array()</code><strong>Details</strong><dl class="property-info">
+<dt>Type</dt>
+<dd>array</dd>
+<dt>See</dt>
+<dd>\_log()
+         
+    </dd>
+</dl>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\phpRack_Adapters_Notifier_Mail_Smtp::$_options" class="anchor"></a><div class="property protected inherited_from ">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/property.png" alt="Property"><img src="images/icons/visibility_protected.png" style="margin-right: 5px" alt="protected">array
+                 <span class="highlight">$_options</span>= 'array()'
+                </code><div class="description">
+<span class="attribute">inherited</span><p class="short-description">Our array with list of options</p><small>Inherited from:
+                        <a href="db_phpRack_Adapters_Notifier_Mail_Abstract.html#%5CphpRack_Adapters_Notifier_Mail_Abstract::%24%24_options">\phpRack_Adapters_Notifier_Mail_Abstract::$$_options</a></small>
+</div>
+<div class="code-tabs">
+<div class="long-description"></div>
+<strong>Default value</strong><code>array()</code><strong>Details</strong><dl class="property-info">
+<dt>Type</dt>
+<dd>array</dd>
+<dt>Inherited_from</dt>
+<dd>
+<a href="db_phpRack_Adapters_Notifier_Mail_Abstract.html#%5CphpRack_Adapters_Notifier_Mail_Abstract::%24%24_options">\phpRack_Adapters_Notifier_Mail_Abstract::$$_options</a>
+         
+    </dd>
+<dt>See</dt>
+<dd>\__construct()
+         
+    </dd>
+</dl>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\phpRack_Adapters_Notifier_Mail_Smtp::$_subject" class="anchor"></a><div class="property protected inherited_from ">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/property.png" alt="Property"><img src="images/icons/visibility_protected.png" style="margin-right: 5px" alt="protected">string
+                 <span class="highlight">$_subject</span>= ''phpRack''
+                </code><div class="description">
+<span class="attribute">inherited</span><p class="short-description">Default message subject</p><small>Inherited from:
+                        <a href="db_phpRack_Adapters_Notifier_Mail_Abstract.html#%5CphpRack_Adapters_Notifier_Mail_Abstract::%24%24_subject">\phpRack_Adapters_Notifier_Mail_Abstract::$$_subject</a></small>
+</div>
+<div class="code-tabs">
+<div class="long-description"></div>
+<strong>Default value</strong><code>'phpRack'</code><strong>Details</strong><dl class="property-info">
+<dt>Type</dt>
+<dd>string</dd>
+<dt>Inherited_from</dt>
+<dd>
+<a href="db_phpRack_Adapters_Notifier_Mail_Abstract.html#%5CphpRack_Adapters_Notifier_Mail_Abstract::%24%24_subject">\phpRack_Adapters_Notifier_Mail_Abstract::$$_subject</a>
+         
+    </dd>
+<dt>See</dt>
+<dd>\setSubject()
+         
+    </dd>
+</dl>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\phpRack_Adapters_Notifier_Mail_Smtp::$_to" class="anchor"></a><div class="property protected inherited_from ">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/property.png" alt="Property"><img src="images/icons/visibility_protected.png" style="margin-right: 5px" alt="protected">string
+                 <span class="highlight">$_to</span>= 'array()'
+                </code><div class="description">
+<span class="attribute">inherited</span><p class="short-description">List of destination e-mail addresses</p><small>Inherited from:
+                        <a href="db_phpRack_Adapters_Notifier_Mail_Abstract.html#%5CphpRack_Adapters_Notifier_Mail_Abstract::%24%24_to">\phpRack_Adapters_Notifier_Mail_Abstract::$$_to</a></small>
+</div>
+<div class="code-tabs">
+<div class="long-description"></div>
+<strong>Default value</strong><code>array()</code><strong>Details</strong><dl class="property-info">
+<dt>Type</dt>
+<dd>string</dd>
+<dt>Inherited_from</dt>
+<dd>
+<a href="db_phpRack_Adapters_Notifier_Mail_Abstract.html#%5CphpRack_Adapters_Notifier_Mail_Abstract::%24%24_to">\phpRack_Adapters_Notifier_Mail_Abstract::$$_to</a>
+         
+    </dd>
+<dt>See</dt>
+<dd>\setTo()
+         
+    </dd>
+</dl>
+</div>
+<div class="clear"></div>
+</div>
+</div>
+<h3>Methods</h3>
+<div>
+<a id="\phpRack_Adapters_Notifier_Mail_Smtp::__construct()" class="anchor"></a><div class="method public">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">__construct</span><span class="nb-faded-text">(
+          array $options
+              =
+              array()
+          )
+        </span>
+        :
+          void</code><div class="description"><p class="short_description">Constructor for the smtp protocol.</p></div>
+<div class="code-tabs">
+<div class="long-description"><p>Creates address to connect to</p></div>
+<strong>Parameters</strong><table class="argument-info">
+<thead><tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<th>$options</th>
+<td>array</td>
+<td><em><p>List of parameters</p></em></td>
+</tr>
+</table>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\phpRack_Adapters_Notifier_Mail_Smtp::__destruct()" class="anchor"></a><div class="method public">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">__destruct</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+          void</code><div class="description"><p class="short_description">Destructor.</p></div>
+<div class="code-tabs">
+<div class="long-description"><p>Closes connection if needed</p></div>
+<strong>Throws</strong><table class="argument-info">
+<thead><tr>
+<th>Exception</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<td><a href="http://php.net/manual/en/class.exception.php">\Exception</a></td>
+<td><em>if can't close connection</em></td>
+</tr>
+</table>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\phpRack_Adapters_Notifier_Mail_Smtp::_connect()" class="anchor"></a><div class="method protected">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_protected.png" style="margin-right: 5px" alt="protected"><span class="highlight">_connect</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+          void</code><div class="description"><p class="short_description">Connects to the stream and returns connection status</p></div>
+<div class="code-tabs">
+<div class="long-description"></div>
+<strong>Throws</strong><table class="argument-info">
+<thead><tr>
+<th>Exception</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<td><a href="http://php.net/manual/en/class.exception.php">\Exception</a></td>
+<td><em>if can't connect to the mail server</em></td>
+</tr>
+</table>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\phpRack_Adapters_Notifier_Mail_Smtp::_getEncodedBody()" class="anchor"></a><div class="method protected inherited_from ">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_protected.png" style="margin-right: 5px" alt="protected"><span class="highlight">_getEncodedBody</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+          string</code><div class="description">
+<span class="attribute">inherited</span><p class="short_description">Encodes body to UTF-8.</p>
+<small>Inherited from:
+                    <a href="db_phpRack_Adapters_Notifier_Mail_Abstract.html#%5CphpRack_Adapters_Notifier_Mail_Abstract::_getEncodedBody()">\phpRack_Adapters_Notifier_Mail_Abstract::_getEncodedBody()</a></small>
+</div>
+<div class="code-tabs">
+<div class="long-description"><p>Output text has fixed width</p></div>
+<strong>Returns</strong><table class="argument-info">
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<td>string</td>
+<td>base64 encoded string</td>
+</tr>
+</table>
+<strong>Details</strong><dl class="function-info">
+<dt>See</dt>
+<dd>\setBody()
+         
+    </dd>
+</dl>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\phpRack_Adapters_Notifier_Mail_Smtp::_getEncodedSubject()" class="anchor"></a><div class="method protected inherited_from ">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_protected.png" style="margin-right: 5px" alt="protected"><span class="highlight">_getEncodedSubject</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+          string</code><div class="description">
+<span class="attribute">inherited</span><p class="short_description">Encodes subject to UTF-8</p>
+<small>Inherited from:
+                    <a href="db_phpRack_Adapters_Notifier_Mail_Abstract.html#%5CphpRack_Adapters_Notifier_Mail_Abstract::_getEncodedSubject()">\phpRack_Adapters_Notifier_Mail_Abstract::_getEncodedSubject()</a></small>
+</div>
+<div class="code-tabs">
+<div class="long-description"></div>
+<strong>Returns</strong><table class="argument-info">
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<td>string</td>
+<td>base64 encoded string with special chars</td>
+</tr>
+</table>
+<strong>Details</strong><dl class="function-info">
+<dt>See</dt>
+<dd>\setSubject()
+         
+    </dd>
+</dl>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\phpRack_Adapters_Notifier_Mail_Smtp::_getLog()" class="anchor"></a><div class="method protected">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_protected.png" style="margin-right: 5px" alt="protected"><span class="highlight">_getLog</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+          string</code><div class="description"><p class="short_description">Returns information about queries and response in plain format</p></div>
+<div class="code-tabs">
+<div class="long-description"></div>
+<strong>Returns</strong><table class="argument-info">
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<td>string</td>
+<td></td>
+</tr>
+</table>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\phpRack_Adapters_Notifier_Mail_Smtp::_log()" class="anchor"></a><div class="method protected">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_protected.png" style="margin-right: 5px" alt="protected"><span class="highlight">_log</span><span class="nb-faded-text">(
+          string $msg, bool $throwError
+              =
+              false
+          )
+        </span>
+        :
+          void</code><div class="description"><p class="short_description">Logs information about queries
+and response to debug</p></div>
+<div class="code-tabs">
+<div class="long-description"></div>
+<strong>Parameters</strong><table class="argument-info">
+<thead><tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<th>$msg</th>
+<td>string</td>
+<td><em></em></td>
+</tr>
+<tr>
+<th>$throwError</th>
+<td>bool</td>
+<td><em></em></td>
+</tr>
+</table>
+<strong>Throws</strong><table class="argument-info">
+<thead><tr>
+<th>Exception</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<td><a href="http://php.net/manual/en/class.exception.php">\Exception</a></td>
+<td><em>if $throwError eq. true</em></td>
+</tr>
+</table>
+<strong>Details</strong><dl class="function-info">
+<dt>See</dt>
+<dd>\_mustBe()
+         
+    </dd>
+<dt>See</dt>
+<dd>\_query()
+         
+    </dd>
+</dl>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\phpRack_Adapters_Notifier_Mail_Smtp::_mustBe()" class="anchor"></a><div class="method protected">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_protected.png" style="margin-right: 5px" alt="protected"><span class="highlight">_mustBe</span><span class="nb-faded-text">(
+           $code,  $timeout
+              =
+              300
+          )
+        </span>
+        :
+          <a href="db_phpRack_Adapters_Notifier_Mail_Smtp.html#%5CphpRack_Adapters_Notifier_Mail_Smtp">\phpRack_Adapters_Notifier_Mail_Smtp</a></code><div class="description"><p class="short_description">Reads stream. Moves caret and checks for a code or codes.</p></div>
+<div class="code-tabs">
+<div class="long-description"><p>Second parameter used as time limit for read stream</p></div>
+<strong>Parameters</strong><table class="argument-info">
+<thead><tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<th>$code</th>
+<td></td>
+<td><em></em></td>
+</tr>
+<tr>
+<th>$timeout</th>
+<td></td>
+<td><em></em></td>
+</tr>
+</table>
+<strong>Returns</strong><table class="argument-info">
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<td><a href="db_phpRack_Adapters_Notifier_Mail_Smtp.html#%5CphpRack_Adapters_Notifier_Mail_Smtp">\phpRack_Adapters_Notifier_Mail_Smtp</a></td>
+<td></td>
+</tr>
+</table>
+<strong>Throws</strong><table class="argument-info">
+<thead><tr>
+<th>Exception</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<td><a href="http://php.net/manual/en/class.exception.php">\Exception</a></td>
+<td><em>if can't change stream timeout</em></td>
+</tr>
+<tr>
+<td><a href="http://php.net/manual/en/class.exception.php">\Exception</a></td>
+<td><em>if can't read from the socket</em></td>
+</tr>
+</table>
+<strong>Details</strong><dl class="function-info">
+<dt>Fluent</dt>
+<dd>This method is part of a fluent interface and will return the same instance
+         
+    </dd>
+<dt>See</dt>
+<dd>\_log()
+         
+    </dd>
+<dt></dt>
+<dd>int|array<br><em></em>
+</dd>
+<dt></dt>
+<dd>int<br><em>Timeout (Default: 300)</em>
+</dd>
+</dl>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\phpRack_Adapters_Notifier_Mail_Smtp::_query()" class="anchor"></a><div class="method protected">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_protected.png" style="margin-right: 5px" alt="protected"><span class="highlight">_query</span><span class="nb-faded-text">(
+           $msg
+          )
+        </span>
+        :
+          <a href="db_phpRack_Adapters_Notifier_Mail_Smtp.html#%5CphpRack_Adapters_Notifier_Mail_Smtp">\phpRack_Adapters_Notifier_Mail_Smtp</a></code><div class="description"><p class="short_description">Writes data to the connetion (stream)</p></div>
+<div class="code-tabs">
+<div class="long-description"></div>
+<strong>Parameters</strong><table class="argument-info">
+<thead><tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<th>$msg</th>
+<td></td>
+<td><em></em></td>
+</tr>
+</table>
+<strong>Returns</strong><table class="argument-info">
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<td><a href="db_phpRack_Adapters_Notifier_Mail_Smtp.html#%5CphpRack_Adapters_Notifier_Mail_Smtp">\phpRack_Adapters_Notifier_Mail_Smtp</a></td>
+<td></td>
+</tr>
+</table>
+<strong>Throws</strong><table class="argument-info">
+<thead><tr>
+<th>Exception</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<td><a href="http://php.net/manual/en/class.exception.php">\Exception</a></td>
+<td><em>if can't write to the stream</em></td>
+</tr>
+</table>
+<strong>Details</strong><dl class="function-info">
+<dt>Fluent</dt>
+<dd>This method is part of a fluent interface and will return the same instance
+         
+    </dd>
+<dt></dt>
+<dd>string<br><em>Message to send to SMTP server</em>
+</dd>
+</dl>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\phpRack_Adapters_Notifier_Mail_Smtp::_validateBeforeSend()" class="anchor"></a><div class="method protected inherited_from ">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_protected.png" style="margin-right: 5px" alt="protected"><span class="highlight">_validateBeforeSend</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+          bool</code><div class="description">
+<span class="attribute">inherited</span><p class="short_description">Checks if we are ready to build mail</p>
+<small>Inherited from:
+                    <a href="db_phpRack_Adapters_Notifier_Mail_Abstract.html#%5CphpRack_Adapters_Notifier_Mail_Abstract::_validateBeforeSend()">\phpRack_Adapters_Notifier_Mail_Abstract::_validateBeforeSend()</a></small>
+</div>
+<div class="code-tabs">
+<div class="long-description"></div>
+<strong>Returns</strong><table class="argument-info">
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<td>bool</td>
+<td></td>
+</tr>
+</table>
+<strong>Throws</strong><table class="argument-info">
+<thead><tr>
+<th>Exception</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<td><a href="http://php.net/manual/en/class.exception.php">\Exception</a></td>
+<td><em>if To not defined</em></td>
+</tr>
+<tr>
+<td><a href="http://php.net/manual/en/class.exception.php">\Exception</a></td>
+<td><em>if Body not defined</em></td>
+</tr>
+</table>
+<strong>Details</strong><dl class="function-info">
+<dt>See</dt>
+<dd>\phpRack_Adapters_Notifier_Mail_Sendmail->send()
+         
+    </dd>
+<dt>See</dt>
+<dd>\phpRack_Adapters_Notifier_Mail_Smtp->send()
+         
+    </dd>
+</dl>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\phpRack_Adapters_Notifier_Mail_Smtp::send()" class="anchor"></a><div class="method public">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">send</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+          void</code><div class="description"><p class="short_description">Prepares and sends an mail</p></div>
+<div class="code-tabs">
+<div class="long-description"></div>
+<strong>Throws</strong><table class="argument-info">
+<thead><tr>
+<th>Exception</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<td><a href="http://php.net/manual/en/class.exception.php">\Exception</a></td>
+<td><em>if connection doesn't established</em></td>
+</tr>
+</table>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\phpRack_Adapters_Notifier_Mail_Smtp::setBody()" class="anchor"></a><div class="method public inherited_from ">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">setBody</span><span class="nb-faded-text">(
+          string $plain
+          )
+        </span>
+        :
+          \phpRack_Adapters_Mail</code><div class="description">
+<span class="attribute">inherited</span><p class="short_description">Assigns body of a mail</p>
+<small>Inherited from:
+                    <a href="db_phpRack_Adapters_Notifier_Mail_Abstract.html#%5CphpRack_Adapters_Notifier_Mail_Abstract::setBody()">\phpRack_Adapters_Notifier_Mail_Abstract::setBody()</a></small>
+</div>
+<div class="code-tabs">
+<div class="long-description"></div>
+<strong>Parameters</strong><table class="argument-info">
+<thead><tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<th>$plain</th>
+<td>string</td>
+<td><em><p>Text to be assigned</p></em></td>
+</tr>
+</table>
+<strong>Returns</strong><table class="argument-info">
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<td>\phpRack_Adapters_Mail</td>
+<td></td>
+</tr>
+</table>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\phpRack_Adapters_Notifier_Mail_Smtp::setSubject()" class="anchor"></a><div class="method public inherited_from ">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">setSubject</span><span class="nb-faded-text">(
+           $text
+          )
+        </span>
+        :
+          \phpRack_Adapters_Mail</code><div class="description">
+<span class="attribute">inherited</span><p class="short_description">Assigns subject of a mail</p>
+<small>Inherited from:
+                    <a href="db_phpRack_Adapters_Notifier_Mail_Abstract.html#%5CphpRack_Adapters_Notifier_Mail_Abstract::setSubject()">\phpRack_Adapters_Notifier_Mail_Abstract::setSubject()</a></small>
+</div>
+<div class="code-tabs">
+<div class="long-description"></div>
+<strong>Parameters</strong><table class="argument-info">
+<thead><tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<th>$text</th>
+<td></td>
+<td><em><p>string</p></em></td>
+</tr>
+</table>
+<strong>Returns</strong><table class="argument-info">
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<td>\phpRack_Adapters_Mail</td>
+<td></td>
+</tr>
+</table>
+</div>
+<div class="clear"></div>
+</div>
+<a id="\phpRack_Adapters_Notifier_Mail_Smtp::setTo()" class="anchor"></a><div class="method public inherited_from ">
+<a href="#" class="gripper"><img src="images/icons/arrow_right.png"><img src="images/icons/arrow_down.png" style="display: none;"></a><code><img src="images/icons/method.png" alt="method"><img src="images/icons/visibility_public.png" style="margin-right: 5px" alt="public"><span class="highlight">setTo</span><span class="nb-faded-text">(
+          string | array $mails
+          )
+        </span>
+        :
+          \phpRack_Adapters_Mail</code><div class="description">
+<span class="attribute">inherited</span><p class="short_description">Sets destination mail or mails.</p>
+<small>Inherited from:
+                    <a href="db_phpRack_Adapters_Notifier_Mail_Abstract.html#%5CphpRack_Adapters_Notifier_Mail_Abstract::setTo()">\phpRack_Adapters_Notifier_Mail_Abstract::setTo()</a></small>
+</div>
+<div class="code-tabs">
+<div class="long-description"></div>
+<strong>Parameters</strong><table class="argument-info">
+<thead><tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<th>$mails</th>
+<td>string | array</td>
+<td><em></em></td>
+</tr>
+</table>
+<strong>Returns</strong><table class="argument-info">
+<thead><tr>
+<th>Type</th>
+<th>Description</th>
+</tr></thead>
+<tr>
+<td>\phpRack_Adapters_Mail</td>
+<td></td>
+</tr>
+</table>
+</div>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+</div>
+<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.18.1</a>.
+    </small></body></html>
